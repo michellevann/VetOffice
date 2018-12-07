@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using VetOffice.Data;
 using VetOffice.WebMVC.Models;
 
 namespace VetOffice.WebMVC

@@ -5,6 +5,16 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetOffice.WebMVC", "VetOffice.WebMVC\VetOffice.WebMVC.csproj", "{BBC0F8E1-63BE-4DE5-A588-DEC722FFC8D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetOffice.Data", "VetOffice.Data\VetOffice.Data.csproj", "{1479D3BE-4A1D-4BF5-8E6A-A554E8B97C05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetOffice.Models", "VetOffice.Models\VetOffice.Models.csproj", "{978AF09F-AB98-4CC7-8FAD-7F6FF6BCC20C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetOffice.Contracts", "VetOffice.Contracts\VetOffice.Contracts.csproj", "{A3116BF4-C79F-4B4C-BA0C-C17593C2BB52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetOffice.Services", "VetOffice.Services\VetOffice.Services.csproj", "{9E14B6ED-23A3-4E40-87B6-D80A8A30041A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetOffice.Tests", "VetOffice.Tests\VetOffice.Tests.csproj", "{B8AED358-254C-4E94-811E-6F5820DA4758}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{BBC0F8E1-63BE-4DE5-A588-DEC722FFC8D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBC0F8E1-63BE-4DE5-A588-DEC722FFC8D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBC0F8E1-63BE-4DE5-A588-DEC722FFC8D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1479D3BE-4A1D-4BF5-8E6A-A554E8B97C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1479D3BE-4A1D-4BF5-8E6A-A554E8B97C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1479D3BE-4A1D-4BF5-8E6A-A554E8B97C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1479D3BE-4A1D-4BF5-8E6A-A554E8B97C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{978AF09F-AB98-4CC7-8FAD-7F6FF6BCC20C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{978AF09F-AB98-4CC7-8FAD-7F6FF6BCC20C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{978AF09F-AB98-4CC7-8FAD-7F6FF6BCC20C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{978AF09F-AB98-4CC7-8FAD-7F6FF6BCC20C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3116BF4-C79F-4B4C-BA0C-C17593C2BB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3116BF4-C79F-4B4C-BA0C-C17593C2BB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3116BF4-C79F-4B4C-BA0C-C17593C2BB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3116BF4-C79F-4B4C-BA0C-C17593C2BB52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E14B6ED-23A3-4E40-87B6-D80A8A30041A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E14B6ED-23A3-4E40-87B6-D80A8A30041A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E14B6ED-23A3-4E40-87B6-D80A8A30041A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E14B6ED-23A3-4E40-87B6-D80A8A30041A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8AED358-254C-4E94-811E-6F5820DA4758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AED358-254C-4E94-811E-6F5820DA4758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AED358-254C-4E94-811E-6F5820DA4758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AED358-254C-4E94-811E-6F5820DA4758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
