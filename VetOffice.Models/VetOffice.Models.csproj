@@ -55,13 +55,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppointmentCreate.cs" />
+    <Compile Include="AppointmentDetail.cs" />
     <Compile Include="AppointmentListItem.cs" />
     <Compile Include="CustomerCreate.cs" />
+    <Compile Include="CustomerDetail.cs" />
     <Compile Include="CustomerListItem.cs" />
     <Compile Include="PetCreate.cs" />
+    <Compile Include="PetDetail.cs" />
     <Compile Include="PetListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReasonCreate.cs" />
+    <Compile Include="ReasonDetail.cs" />
     <Compile Include="ReasonListItem.cs" />
   </ItemGroup>
   <ItemGroup>

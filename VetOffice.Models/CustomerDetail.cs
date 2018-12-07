@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VetOffice.Models
 {
-    public class CustomerListItem
+    public class CustomerDetail
     {
         public int CustomerId { get; set; }
         [Display(Name = "First Name")]

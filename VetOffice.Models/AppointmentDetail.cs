@@ -4,14 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VetOffice.Data;
 
 namespace VetOffice.Models
 {
-    public class ReasonListItem
+    public class AppointmentDetail
     {
-        public int ReasonId { get; set; }
-        [Display(Name ="Reason For Visit")]
-        public VisitReason ReasonForVisit { get; set; }
+        public int AppointmentId { get; set; }
+        [Display(Name = "Next Appointment")]
+        public DateTime NextAppt { get; set; }
     }
 }

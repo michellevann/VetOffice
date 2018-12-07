@@ -9,6 +9,7 @@ namespace VetOffice.Models
 {
     public class AppointmentListItem
     {
+        public int AppointmentId { get; set; }
         [Display(Name = "Next Appointment")]
         public DateTime NextAppt { get; set; }
     }

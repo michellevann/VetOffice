@@ -8,7 +8,7 @@ using VetOffice.Data;
 
 namespace VetOffice.Models
 {
-    public class PetListItem
+    public class PetDetail
     {
         public int PetId { get; set; }
         [Display(Name = "Pet Name")]

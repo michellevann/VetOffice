@@ -22,7 +22,7 @@ namespace VetOffice.Data
     public class Reason
     {
         [Key]
-        public int VisitId { get; set; }
+        public int ReasonId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
         [Required]

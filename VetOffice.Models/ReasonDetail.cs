@@ -8,10 +8,10 @@ using VetOffice.Data;
 
 namespace VetOffice.Models
 {
-    public class ReasonListItem
+    public class ReasonDetail
     {
         public int ReasonId { get; set; }
-        [Display(Name ="Reason For Visit")]
+        [Display(Name = "Reason For Visit")]
         public VisitReason ReasonForVisit { get; set; }
     }
 }
