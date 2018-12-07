@@ -74,5 +74,16 @@ namespace VetOffice.Services
             }
         }
 
+        public bool DeleteAppointment(int appointmentId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Appointments
+                    .Single(e => e.AppointmentId == appointmentId && e.OwnerId == _userId);
+                ctx.Appointments.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

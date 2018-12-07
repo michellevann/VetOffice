@@ -84,5 +84,17 @@ namespace VetOffice.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeletePet(int petId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Pets
+                    .Single(e => e.PetId == petId && e.OwnerId == _userId);
+                ctx.Pets.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

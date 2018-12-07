@@ -60,6 +60,45 @@ namespace VetOffice.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, AppointmentEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            if (model.AppointmentId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateAppointmentService();
+            if (service.UpdateAppointment(model))
+            {
+                TempData["SaveResult"] = "Your appointment was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your appointment could not be updated.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateAppointmentService();
+            var model = svc.GetAppointmentById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateAppointmentService();
+            service.DeleteAppointment(id);
+            TempData["SaveResult"] = "Your appointment was deleted.";
+            return RedirectToAction("Index");
+        }
+
         private AppointmentService CreateAppointmentService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

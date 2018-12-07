@@ -63,6 +63,45 @@ namespace VetOffice.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, PetEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            if (model.PetId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreatePetService();
+            if (service.UpdatePet(model))
+            {
+                TempData["SaveResult"] = "Your pet was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your pet could not be updated.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreatePetService();
+            var model = svc.GetPetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreatePetService();
+            service.DeletePet(id);
+            TempData["SaveResult"] = "Your appointment was deleted.";
+            return RedirectToAction("Index");
+        }
+
         private PetService CreatePetService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
