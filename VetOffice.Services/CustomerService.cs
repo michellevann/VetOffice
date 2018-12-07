@@ -36,6 +36,21 @@ namespace VetOffice.Services
             }
         }
 
+        public bool CreateCustPetAppt(CustPetApptCreate model)
+        {
+            var entity = new CustPetAppt()
+            {
+                OwnerId = _userId,
+                CustPetAppt.Cust = model.CustPetAppt.Cust
+            };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Customers.Add();
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         public IEnumerable<CustomerListItem> GetCustomers()
         {
             using (var ctx = new ApplicationDbContext())

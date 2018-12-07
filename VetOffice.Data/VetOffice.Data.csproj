@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Appointment.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="CustPetAppt.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\201812070401157_InitialCreate.cs" />
     <Compile Include="Migrations\201812070401157_InitialCreate.Designer.cs">
@@ -68,6 +69,10 @@
     <Compile Include="Migrations\201812071323009_deletedtable.cs" />
     <Compile Include="Migrations\201812071323009_deletedtable.Designer.cs">
       <DependentUpon>201812071323009_deletedtable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812071501420_CT.cs" />
+    <Compile Include="Migrations\201812071501420_CT.Designer.cs">
+      <DependentUpon>201812071501420_CT.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pet.cs" />
@@ -86,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812071323009_deletedtable.resx">
       <DependentUpon>201812071323009_deletedtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812071501420_CT.resx">
+      <DependentUpon>201812071501420_CT.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

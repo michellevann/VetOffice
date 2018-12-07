@@ -197,6 +197,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\CustPetApptController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PetController.cs" />
@@ -282,6 +283,8 @@
     <Content Include="Views\Pet\Delete.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Appointment\Delete.cshtml" />
+    <Content Include="Views\CustPetAppt\Index.cshtml" />
+    <Content Include="Views\CustPetAppt\CreateCustPetAppt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

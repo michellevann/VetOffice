@@ -101,9 +101,7 @@ namespace VetOffice.WebMVC.Controllers
 
         private AppointmentService CreateAppointmentService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new AppointmentService(userId);
-            return service;
+            return new AppointmentService(Guid.Parse(User.Identity.GetUserId()));
         }
     }
 }

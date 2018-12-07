@@ -32,7 +32,7 @@ namespace VetOffice.WebMVC.Controllers
         public ActionResult Create(CustomerCreate model)
         {
             if (!ModelState.IsValid) return View(model);
-            var service = CreateCustomerService();
+            var service = new CustomerService(Guid.Parse(User.Identity.GetUserId()));
             if (service.CreateCustomer(model))
             {
                 ViewBag.SaveResult = "Your customer was created.";
@@ -106,9 +106,7 @@ namespace VetOffice.WebMVC.Controllers
 
         private CustomerService CreateCustomerService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CustomerService(userId);
-            return service;
+            return new CustomerService(Guid.Parse(User.Identity.GetUserId()));
         }
     }
 }

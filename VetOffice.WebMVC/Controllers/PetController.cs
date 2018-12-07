@@ -104,9 +104,7 @@ namespace VetOffice.WebMVC.Controllers
 
         private PetService CreatePetService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new PetService(userId);
-            return service;
+            return new PetService(Guid.Parse(User.Identity.GetUserId()));
         }
     }
 }

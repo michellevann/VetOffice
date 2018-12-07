@@ -56,6 +56,8 @@ namespace VetOffice.Services
                 return new AppointmentDetail
                 {
                     AppointmentId = entity.AppointmentId,
+                    CustomerId = entity.Customer.CustomerId,
+                    PetId = entity.Pet.PetId,
                     NextAppt = entity.NextAppt
                 };
             }
