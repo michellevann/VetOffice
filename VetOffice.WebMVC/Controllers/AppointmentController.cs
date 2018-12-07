@@ -49,6 +49,17 @@ namespace VetOffice.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateAppointmentService();
+            var detail = service.GetAppointmentById(id);
+            var model = new AppointmentEdit
+            {
+                NextAppt = detail.NextAppt
+            };
+            return View(model);
+        }
+
         private AppointmentService CreateAppointmentService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

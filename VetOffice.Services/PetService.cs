@@ -23,7 +23,8 @@ namespace VetOffice.Services
                 OwnerId = _userId,
                 PetName = model.PetName,
                 TypeOfPet = model.TypeOfPet,
-                AgeOfPet = model.AgeOfPet
+                AgeOfPet = model.AgeOfPet,
+                ReasonForVisit = model.ReasonForVisit
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -44,7 +45,8 @@ namespace VetOffice.Services
                         PetId = e.PetId,
                         PetName = e.PetName,
                         TypeOfPet = e.TypeOfPet,
-                        AgeOfPet = e.AgeOfPet
+                        AgeOfPet = e.AgeOfPet,
+                        ReasonForVisit = e.ReasonForVisit
                     });
                 return query.ToArray();
             }
@@ -62,8 +64,24 @@ namespace VetOffice.Services
                     PetId = entity.PetId,
                     PetName = entity.PetName,
                     TypeOfPet = entity.TypeOfPet,
-                    AgeOfPet = entity.AgeOfPet
+                    AgeOfPet = entity.AgeOfPet,
+                    ReasonForVisit = entity.ReasonForVisit
                 };
+            }
+        }
+
+        public bool UpdatePet(PetEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Pets
+                    .Single(e => e.PetId == model.PetId && e.OwnerId == _userId);
+                entity.PetName = model.PetName;
+                entity.TypeOfPet = model.TypeOfPet;
+                entity.AgeOfPet = model.AgeOfPet;
+                entity.ReasonForVisit = model.ReasonForVisit;
+                return ctx.SaveChanges() == 1;
             }
         }
     }

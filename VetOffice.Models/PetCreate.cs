@@ -19,5 +19,8 @@ namespace VetOffice.Models
         [Required]
         [Display(Name = "Age of Pet")]
         public PetAge AgeOfPet { get; set; }
+        [Required]
+        [Display(Name = "Reason For Visit")]
+        public VisitReason ReasonForVisit { get; set; }
     }
 }

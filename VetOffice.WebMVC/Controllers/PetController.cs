@@ -49,6 +49,20 @@ namespace VetOffice.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreatePetService();
+            var detail = service.GetPetById(id);
+            var model = new PetEdit
+            {
+                PetName = detail.PetName,
+                TypeOfPet = detail.TypeOfPet,
+                AgeOfPet = detail.AgeOfPet,
+                ReasonForVisit = detail.ReasonForVisit
+            };
+            return View(model);
+        }
+
         private PetService CreatePetService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

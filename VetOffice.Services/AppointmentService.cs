@@ -61,5 +61,18 @@ namespace VetOffice.Services
             }
 
         }
+
+        public bool UpdateAppointment(AppointmentEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Appointments
+                    .Single(e => e.AppointmentId == model.AppointmentId && e.OwnerId == _userId);
+                entity.NextAppt = model.NextAppt;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

@@ -26,9 +26,31 @@
             @Html.DisplayFor(model => model.PetName)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeOfPet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeOfPet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeOfPet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeOfPet)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReasonForVisit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReasonForVisit)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PetId}) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PetId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

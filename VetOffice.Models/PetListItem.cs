@@ -17,6 +17,8 @@ namespace VetOffice.Models
         public PetType TypeOfPet { get; set; }
         [Display(Name = "Age of Pet")]
         public PetAge AgeOfPet { get; set; }
+        [Display(Name = "Reason For Visit")]
+        public VisitReason ReasonForVisit { get; set; }
         public override string ToString() => $"[{PetId}] {PetName}";
     }
 }
