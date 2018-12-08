@@ -12,19 +12,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.PetId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.PetName)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeOfPet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgeOfPet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReasonForVisit)
+        </th>
+
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PetId)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.PetName)
         </td>

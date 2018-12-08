@@ -16,7 +16,6 @@ namespace VetOffice.Services
             _userId = userId;
         }
     
-
         public bool CreateCustomer(CustomerCreate model)
         {
             var entity = new Customer()
@@ -32,21 +31,6 @@ namespace VetOffice.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Customers.Add(entity);
-                return ctx.SaveChanges() == 1;
-            }
-        }
-
-        public bool CreateCustPetAppt(CustPetApptCreate model)
-        {
-            var entity = new CustPetAppt()
-            {
-                OwnerId = _userId,
-                CustPetAppt.Cust = model.CustPetAppt.Cust
-            };
-
-            using (var ctx = new ApplicationDbContext())
-            {
-                ctx.Customers.Add();
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -71,6 +55,11 @@ namespace VetOffice.Services
                 return query.ToArray();
             }
         }
+
+        //public IEnumerable<CustPetApptListItem> GetCusts()
+        //{
+
+        //}
 
         public CustomerDetail GetCustomerById(int customerId)
         {

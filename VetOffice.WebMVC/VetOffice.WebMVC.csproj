@@ -284,7 +284,9 @@
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Appointment\Delete.cshtml" />
     <Content Include="Views\CustPetAppt\Index.cshtml" />
-    <Content Include="Views\CustPetAppt\CreateCustPetAppt.cshtml" />
+    <Content Include="Views\CustPetAppt\Details.cshtml" />
+    <Content Include="Views\CustPetAppt\Edit.cshtml" />
+    <Content Include="Views\CustPetAppt\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -63,6 +63,8 @@
     <Compile Include="CustomerEdit.cs" />
     <Compile Include="CustomerListItem.cs" />
     <Compile Include="CustPetApptCreate.cs" />
+    <Compile Include="CustPetApptDetail.cs" />
+    <Compile Include="CustPetApptEdit.cs" />
     <Compile Include="CustPetApptListItem.cs" />
     <Compile Include="PetCreate.cs" />
     <Compile Include="PetDetail.cs" />

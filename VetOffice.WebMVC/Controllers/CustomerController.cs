@@ -31,7 +31,8 @@ namespace VetOffice.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CustomerCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+                return View(model);
             var service = new CustomerService(Guid.Parse(User.Identity.GetUserId()));
             if (service.CreateCustomer(model))
             {
@@ -51,9 +52,9 @@ namespace VetOffice.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreateCustomerService();
-            var detail = service.GetCustomerById(id);
-            var model = new CustomerEdit
+            CustomerService service = CreateCustomerService();
+            CustomerDetail detail = service.GetCustomerById(id);
+            CustomerEdit model = new CustomerEdit
             {
                 FirstName = detail.FirstName,
                 LastName = detail.LastName,

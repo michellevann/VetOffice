@@ -7,13 +7,13 @@ namespace VetOffice.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class deletedtable : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(deletedtable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812071323009_deletedtable"; }
+            get { return "201812081841334_initial"; }
         }
         
         string IMigrationMetadata.Source

@@ -10,7 +10,6 @@ namespace VetOffice.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "VetOffice.Data.ApplicationDbContext";
         }
 
         protected override void Seed(VetOffice.Data.ApplicationDbContext context)

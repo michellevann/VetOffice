@@ -3,7 +3,7 @@ namespace VetOffice.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -41,18 +41,9 @@ namespace VetOffice.Data.Migrations
                         PetName = c.String(nullable: false),
                         TypeOfPet = c.Int(nullable: false),
                         AgeOfPet = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.PetId);
-            
-            CreateTable(
-                "dbo.Reason",
-                c => new
-                    {
-                        VisitId = c.Int(nullable: false, identity: true),
-                        OwnerId = c.Guid(nullable: false),
                         ReasonForVisit = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.VisitId);
+                .PrimaryKey(t => t.PetId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -141,7 +132,6 @@ namespace VetOffice.Data.Migrations
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Reason");
             DropTable("dbo.Pet");
             DropTable("dbo.Customer");
             DropTable("dbo.Appointment");

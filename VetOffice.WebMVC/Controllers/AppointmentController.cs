@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VetOffice.Data;
 using VetOffice.Models;
 using VetOffice.Services;
 
@@ -45,7 +46,12 @@ namespace VetOffice.WebMVC.Controllers
         public ActionResult Details(int id)
         {
             var svc = CreateAppointmentService();
-            var model = svc.GetAppointmentById(id);
+            var detail = svc.GetAppointmentById(id);
+            var model = new AppointmentDetail
+            {
+                AppointmentId = detail.AppointmentId,
+                NextAppt = detail.NextAppt
+            };
             return View(model);
         }
 

@@ -29,7 +29,7 @@ namespace VetOffice.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-         
+
         public IEnumerable<AppointmentListItem> GetAppointments()
         {
             using (var ctx = new ApplicationDbContext())
@@ -40,7 +40,7 @@ namespace VetOffice.Services
                     .Select(e => new AppointmentListItem
                     {
                         AppointmentId = e.AppointmentId,
-                        NextAppt = e.NextAppt
+                        NextAppt = e.NextAppt,
                     });
                 return query.ToArray();
             }
@@ -56,12 +56,9 @@ namespace VetOffice.Services
                 return new AppointmentDetail
                 {
                     AppointmentId = entity.AppointmentId,
-                    CustomerId = entity.Customer.CustomerId,
-                    PetId = entity.Pet.PetId,
-                    NextAppt = entity.NextAppt
+                    NextAppt = entity.NextAppt,
                 };
             }
-
         }
 
         public bool UpdateAppointment(AppointmentEdit model)

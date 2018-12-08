@@ -58,21 +58,9 @@
     <Compile Include="Customer.cs" />
     <Compile Include="CustPetAppt.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201812070401157_InitialCreate.cs" />
-    <Compile Include="Migrations\201812070401157_InitialCreate.Designer.cs">
-      <DependentUpon>201812070401157_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812070404206_initial.cs" />
-    <Compile Include="Migrations\201812070404206_initial.Designer.cs">
-      <DependentUpon>201812070404206_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812071323009_deletedtable.cs" />
-    <Compile Include="Migrations\201812071323009_deletedtable.Designer.cs">
-      <DependentUpon>201812071323009_deletedtable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812071501420_CT.cs" />
-    <Compile Include="Migrations\201812071501420_CT.Designer.cs">
-      <DependentUpon>201812071501420_CT.cs</DependentUpon>
+    <Compile Include="Migrations\201812081841334_initial.cs" />
+    <Compile Include="Migrations\201812081841334_initial.Designer.cs">
+      <DependentUpon>201812081841334_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pet.cs" />
@@ -83,17 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812070401157_InitialCreate.resx">
-      <DependentUpon>201812070401157_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812070404206_initial.resx">
-      <DependentUpon>201812070404206_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812071323009_deletedtable.resx">
-      <DependentUpon>201812071323009_deletedtable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812071501420_CT.resx">
-      <DependentUpon>201812071501420_CT.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812081841334_initial.resx">
+      <DependentUpon>201812081841334_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
