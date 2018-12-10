@@ -62,15 +62,15 @@
     <Compile Include="CustomerDetail.cs" />
     <Compile Include="CustomerEdit.cs" />
     <Compile Include="CustomerListItem.cs" />
-    <Compile Include="CustPetApptCreate.cs" />
-    <Compile Include="CustPetApptDetail.cs" />
-    <Compile Include="CustPetApptEdit.cs" />
-    <Compile Include="CustPetApptListItem.cs" />
     <Compile Include="PetCreate.cs" />
     <Compile Include="PetDetail.cs" />
     <Compile Include="PetEdit.cs" />
-    <Compile Include="PetListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReasonCreate.cs" />
+    <Compile Include="ReasonDetail.cs" />
+    <Compile Include="ReasonEdit.cs" />
+    <Compile Include="ReasonListItem.cs" />
+    <Compile Include="UserProfileModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

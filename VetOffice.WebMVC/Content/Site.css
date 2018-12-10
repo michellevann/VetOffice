@@ -1,12 +1,17 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: gray;
+
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    min-height: 600px;
+    background-image: url(https://pixabay.com/en/pet-dog-puppy-shy-cute-sleepy-423398/) !important;
+    background-size: cover;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

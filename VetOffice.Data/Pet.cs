@@ -38,34 +38,13 @@ namespace VetOffice.Data
         [Display(Name = "10 or more")]
         TenOrMore
     }
-
-    public enum VisitReason
-    {
-        [Display(Name = "Annual Checkup")]
-        AnnualCheckup,
-        Vaccinations,
-        Grooming,
-        [Display(Name = "Spay/Neuter")]
-        SpayNeuter,
-        [Display(Name = "Labwork/Tests")]
-        LabworkTests,
-        Declawing
-    }
-
     public class Pet
     {
-        [Key]
-        public int PetId { get; set; }
-        [Required]
-        public Guid OwnerId { get; set; }
         [Required]
         public string PetName { get; set; }
         [Required]
         public PetType TypeOfPet { get; set; }
         [Required]
         public PetAge AgeOfPet { get; set; }
-        [Required]
-        public VisitReason ReasonForVisit { get; set; }
     }
-
 }

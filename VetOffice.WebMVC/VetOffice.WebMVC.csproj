@@ -197,10 +197,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
-    <Compile Include="Controllers\CustPetApptController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PetController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ReasonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -268,25 +268,23 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Profile\ViewProfile.cshtml" />
+    <Content Include="Views\Profile\UserProfile.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Appointment\Index.cshtml" />
     <Content Include="Views\Customer\Create.cshtml" />
-    <Content Include="Views\Appointment\Create.cshtml" />
-    <Content Include="Views\Customer\Details.cshtml" />
-    <Content Include="Views\Appointment\Details.cshtml" />
-    <Content Include="Views\Pet\Index.cshtml" />
-    <Content Include="Views\Pet\Create.cshtml" />
-    <Content Include="Views\Pet\Details.cshtml" />
-    <Content Include="Views\Appointment\Edit.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
-    <Content Include="Views\Pet\Edit.cshtml" />
-    <Content Include="Views\Pet\Delete.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Reason\Index.cshtml" />
+    <Content Include="Views\Reason\Create.cshtml" />
+    <Content Include="Views\Reason\Details.cshtml" />
+    <Content Include="Views\Reason\Edit.cshtml" />
+    <Content Include="Views\Reason\Delete.cshtml" />
+    <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\Appointment\Create.cshtml" />
+    <Content Include="Views\Appointment\Details.cshtml" />
     <Content Include="Views\Appointment\Delete.cshtml" />
-    <Content Include="Views\CustPetAppt\Index.cshtml" />
-    <Content Include="Views\CustPetAppt\Details.cshtml" />
-    <Content Include="Views\CustPetAppt\Edit.cshtml" />
-    <Content Include="Views\CustPetAppt\Create.cshtml" />
+    <Content Include="Views\Appointment\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

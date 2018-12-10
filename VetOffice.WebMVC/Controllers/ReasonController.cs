@@ -9,15 +9,14 @@ using VetOffice.Services;
 
 namespace VetOffice.WebMVC.Controllers
 {
-    [Authorize]
-    public class PetController : Controller
+    public class ReasonController : Controller
     {
-        // GET: Pet
+        // GET: Reason
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new PetService(userId);
-            var model = service.GetPets();
+            var service = new ReasonService(userId);
+            var model = service.GetReasons();
             return View(model);
         }
 
@@ -29,35 +28,33 @@ namespace VetOffice.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PetCreate model)
+        public ActionResult Create(ReasonCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
-            var service = CreatePetService();
-            if (service.CreatePet(model))
+            if (!ModelState.IsValid)
+                return View(model);
+            var service = new ReasonService(Guid.Parse(User.Identity.GetUserId()));
+            if (service.CreateReason(model))
             {
-                ViewBag.SaveResult = "Your pet was created.";
+                ViewBag.SaveResult = "The reason for the visit is stored.";
                 return RedirectToAction("Index");
             };
-            ModelState.AddModelError("", "Pet could not be created.");
+            ModelState.AddModelError("", "The reason for the visit could not be created.");
             return View(model);
         }
 
         public ActionResult Details(int id)
         {
-            var svc = CreatePetService();
-            var model = svc.GetPetById(id);
+            var svc = CreateReasonService();
+            var model = svc.GetReasonById(id);
             return View(model);
         }
 
         public ActionResult Edit(int id)
         {
-            var service = CreatePetService();
-            var detail = service.GetPetById(id);
-            var model = new PetEdit
+            ReasonService service = CreateReasonService();
+            ReasonDetail detail = service.GetReasonById(id);
+            ReasonEdit model = new ReasonEdit
             {
-                PetName = detail.PetName,
-                TypeOfPet = detail.TypeOfPet,
-                AgeOfPet = detail.AgeOfPet,
                 ReasonForVisit = detail.ReasonForVisit
             };
             return View(model);
@@ -65,29 +62,29 @@ namespace VetOffice.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, PetEdit model)
+        public ActionResult Edit(int id, ReasonEdit model)
         {
             if (!ModelState.IsValid) return View(model);
-            if (model.PetId != id)
+            if (model.ReasonId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
-            var service = CreatePetService();
-            if (service.UpdatePet(model))
+            var service = CreateReasonService();
+            if (service.UpdateReason(model))
             {
-                TempData["SaveResult"] = "Your pet was updated.";
+                TempData["SaveResult"] = "The reason for the visit was updated.";
                 return RedirectToAction("Index");
             }
-            ModelState.AddModelError("", "Your pet could not be updated.");
+            ModelState.AddModelError("", "The reason for the visit could not be updated.");
             return View(model);
         }
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            var svc = CreatePetService();
-            var model = svc.GetPetById(id);
+            var svc = CreateReasonService();
+            var model = svc.GetReasonById(id);
             return View(model);
         }
 
@@ -96,15 +93,15 @@ namespace VetOffice.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)
         {
-            var service = CreatePetService();
-            service.DeletePet(id);
-            TempData["SaveResult"] = "Your appointment was deleted.";
+            var service = CreateReasonService();
+            service.DeleteReason(id);
+            TempData["SaveResult"] = "The reason for the visit was deleted.";
             return RedirectToAction("Index");
         }
 
-        private PetService CreatePetService()
+        private ReasonService CreateReasonService()
         {
-            return new PetService(Guid.Parse(User.Identity.GetUserId()));
+            return new ReasonService(Guid.Parse(User.Identity.GetUserId()));
         }
     }
 }

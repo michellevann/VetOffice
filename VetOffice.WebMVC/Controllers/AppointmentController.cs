@@ -22,9 +22,13 @@ namespace VetOffice.WebMVC.Controllers
             return View(model);
         }
 
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         //GET
         public ActionResult Create()
         {
+            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName");
+            ViewBag.ReasonId = new SelectList(db.Reasons, "ReasonId", "ReasonForVisit");
             return View();
         }
 
@@ -50,7 +54,9 @@ namespace VetOffice.WebMVC.Controllers
             var model = new AppointmentDetail
             {
                 AppointmentId = detail.AppointmentId,
-                NextAppt = detail.NextAppt
+                NextAppt = detail.NextAppt,
+                CustomerId = detail.CustomerId,
+                ReasonId = detail.ReasonId
             };
             return View(model);
         }

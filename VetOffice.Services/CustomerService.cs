@@ -26,7 +26,10 @@ namespace VetOffice.Services
                 StreetAddress = model.StreetAddress,
                 City = model.City,
                 State = model.State,
-                ZipCode = model.ZipCode
+                ZipCode = model.ZipCode,
+                PetName = model.PetName,
+                TypeOfPet = model.TypeOfPet,
+                AgeOfPet = model.AgeOfPet
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -50,16 +53,14 @@ namespace VetOffice.Services
                         StreetAddress = e.StreetAddress,
                         City = e.City,
                         State = e.State,
-                        ZipCode = e.ZipCode
+                        ZipCode = e.ZipCode,
+                        PetName = e.PetName,
+                        TypeOfPet = e.TypeOfPet,
+                        AgeOfPet = e.AgeOfPet
                     });
                 return query.ToArray();
             }
         }
-
-        //public IEnumerable<CustPetApptListItem> GetCusts()
-        //{
-
-        //}
 
         public CustomerDetail GetCustomerById(int customerId)
         {
@@ -76,7 +77,10 @@ namespace VetOffice.Services
                     StreetAddress = entity.StreetAddress,
                     City = entity.City,
                     State = entity.State,
-                    ZipCode = entity.ZipCode
+                    ZipCode = entity.ZipCode,
+                    PetName = entity.PetName,
+                    TypeOfPet = entity.TypeOfPet,
+                    AgeOfPet = entity.AgeOfPet
                 };
             }
         }
@@ -94,6 +98,8 @@ namespace VetOffice.Services
                 entity.City = model.City;
                 entity.State = model.State;
                 entity.ZipCode = model.ZipCode;
+                entity.PetName = model.PetName;
+                entity.TypeOfPet = model.TypeOfPet;
                 return ctx.SaveChanges() == 1;
             }
         }

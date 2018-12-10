@@ -11,7 +11,13 @@ namespace VetOffice.Models
     public class AppointmentListItem
     {
         public int AppointmentId { get; set; }
+        public int CustomerId { get; set; }
+        public int ReasonId { get; set; }
+
         [Display(Name = "Next Appointment")]
         public DateTime NextAppt { get; set; }
+
+        public virtual Customer Customer { get; set; }
+        public virtual Reason Reason { get; set; }
     }
 }

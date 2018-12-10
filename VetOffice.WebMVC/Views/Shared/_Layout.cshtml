@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title -BowWow and Meow</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -24,12 +24,11 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
-                        <li>@Html.ActionLink("Pets", "Index", "Pet")</li>
-                        <li>@Html.ActionLink("Appointments", "Index", "CustPetAppt")</li>
+                        <li>@Html.ActionLink("Customers", "Create", "Customer")</li>
+                        <li>@Html.ActionLink("Reason for Visit", "Create", "Reason")</li>
+                        <li>@Html.ActionLink("Appointments", "Create", "Appointment")</li>
+
                     }
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

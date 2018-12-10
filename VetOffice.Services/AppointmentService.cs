@@ -18,29 +18,45 @@ namespace VetOffice.Services
 
         public bool CreateAppointment(AppointmentCreate model)
         {
-            var entity = new Appointment()
-            {
-                OwnerId = _userId,
-                NextAppt = model.NextAppt
-            };
             using (var ctx = new ApplicationDbContext())
             {
+                var customer = ctx
+
+                    .Customers
+                    .Single(x => x.CustomerId == model.CustomerId);
+
+                var reason = ctx
+
+                    .Reasons
+                    .Single(x => x.ReasonId == model.ReasonId);
+
+                var entity = new Appointment
+                {
+                    Customer = customer,
+                    Reason = reason,
+                    CustomerId = model.CustomerId,
+                    ReasonId = model.ReasonId,
+                    NextAppt = model.NextAppt
+                };
+
                 ctx.Appointments.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
-        }
 
+        }
+               
         public IEnumerable<AppointmentListItem> GetAppointments()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx
                     .Appointments
-                    .Where(e => e.OwnerId == _userId)
                     .Select(e => new AppointmentListItem
                     {
                         AppointmentId = e.AppointmentId,
-                        NextAppt = e.NextAppt,
+                        Customer = e.Customer,
+                        Reason = e.Reason,
+                        NextAppt = e.NextAppt
                     });
                 return query.ToArray();
             }
@@ -56,7 +72,9 @@ namespace VetOffice.Services
                 return new AppointmentDetail
                 {
                     AppointmentId = entity.AppointmentId,
-                    NextAppt = entity.NextAppt,
+                    CustomerId = entity.CustomerId,
+                    ReasonId = entity.ReasonId,
+                    NextAppt = entity.NextAppt
                 };
             }
         }

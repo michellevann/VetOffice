@@ -61,7 +61,10 @@ namespace VetOffice.WebMVC.Controllers
                 StreetAddress = detail.StreetAddress,
                 City = detail.City,
                 State = detail.State,
-                ZipCode = detail.ZipCode
+                ZipCode = detail.ZipCode,
+                PetName = detail.PetName,
+                TypeOfPet = detail.TypeOfPet,
+                AgeOfPet = detail.AgeOfPet
             };
             return View(model);
         }

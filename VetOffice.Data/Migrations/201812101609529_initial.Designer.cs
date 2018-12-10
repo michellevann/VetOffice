@@ -13,7 +13,7 @@ namespace VetOffice.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201812081841334_initial"; }
+            get { return "201812101609529_initial"; }
         }
         
         string IMigrationMetadata.Source
