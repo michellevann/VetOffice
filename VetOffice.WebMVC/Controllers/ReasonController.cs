@@ -55,6 +55,7 @@ namespace VetOffice.WebMVC.Controllers
             ReasonDetail detail = service.GetReasonById(id);
             ReasonEdit model = new ReasonEdit
             {
+                ReasonId = detail.ReasonId,
                 ReasonForVisit = detail.ReasonForVisit
             };
             return View(model);

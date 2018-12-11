@@ -42,7 +42,6 @@ namespace VetOffice.Services
                 ctx.Appointments.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
-
         }
                
         public IEnumerable<AppointmentListItem> GetAppointments()
@@ -68,12 +67,14 @@ namespace VetOffice.Services
             {
                 var entity = ctx
                     .Appointments
-                    .Single(e => e.AppointmentId == appointmentId && e.OwnerId == _userId);
+                    .Single(e => e.AppointmentId == appointmentId);
                 return new AppointmentDetail
                 {
                     AppointmentId = entity.AppointmentId,
                     CustomerId = entity.CustomerId,
                     ReasonId = entity.ReasonId,
+                    Customer = entity.Customer,
+                    Reason = entity.Reason,
                     NextAppt = entity.NextAppt
                 };
             }
@@ -85,7 +86,7 @@ namespace VetOffice.Services
             {
                 var entity = ctx
                     .Appointments
-                    .Single(e => e.AppointmentId == model.AppointmentId && e.OwnerId == _userId);
+                    .Single(e => e.AppointmentId == model.AppointmentId);
                 entity.NextAppt = model.NextAppt;
                 return ctx.SaveChanges() == 1;
             }
@@ -97,7 +98,7 @@ namespace VetOffice.Services
             {
                 var entity = ctx
                     .Appointments
-                    .Single(e => e.AppointmentId == appointmentId && e.OwnerId == _userId);
+                    .Single(e => e.AppointmentId == appointmentId);
                 ctx.Appointments.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

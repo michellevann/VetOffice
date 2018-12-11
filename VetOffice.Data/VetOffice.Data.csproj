@@ -61,6 +61,18 @@
     <Compile Include="Migrations\201812101609529_initial.Designer.cs">
       <DependentUpon>201812101609529_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812101834261_AddPetTable.cs" />
+    <Compile Include="Migrations\201812101834261_AddPetTable.Designer.cs">
+      <DependentUpon>201812101834261_AddPetTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812102100295_changedClassesToHaveCollection.cs" />
+    <Compile Include="Migrations\201812102100295_changedClassesToHaveCollection.Designer.cs">
+      <DependentUpon>201812102100295_changedClassesToHaveCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812111528525_addedBreed.cs" />
+    <Compile Include="Migrations\201812111528525_addedBreed.Designer.cs">
+      <DependentUpon>201812111528525_addedBreed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +85,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201812101609529_initial.resx">
       <DependentUpon>201812101609529_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101834261_AddPetTable.resx">
+      <DependentUpon>201812101834261_AddPetTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812102100295_changedClassesToHaveCollection.resx">
+      <DependentUpon>201812102100295_changedClassesToHaveCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812111528525_addedBreed.resx">
+      <DependentUpon>201812111528525_addedBreed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -17,11 +17,5 @@ namespace VetOffice.Models
         public string City { get; set; }
         public string State { get; set; }
         public string ZipCode { get; set; }
-        [Required]
-        public string PetName { get; set; }
-        [Required]
-        public PetType TypeOfPet { get; set; }
-        [Required]
-        public PetAge AgeOfPet { get; set; }
     }
 }

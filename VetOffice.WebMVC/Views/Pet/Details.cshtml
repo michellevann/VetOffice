@@ -1,0 +1,52 @@
+﻿@model VetOffice.Models.PetDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PetDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pets)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Pet Name</th>
+                    <th>Pet Type</th>
+                    <th>Pet Age</th>
+                </tr>
+                @foreach (var item in Model.Pets)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PetName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeOfPet)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AgeOfPet)
+                    </td>
+                </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PetId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

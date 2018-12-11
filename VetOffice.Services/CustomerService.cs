@@ -26,10 +26,7 @@ namespace VetOffice.Services
                 StreetAddress = model.StreetAddress,
                 City = model.City,
                 State = model.State,
-                ZipCode = model.ZipCode,
-                PetName = model.PetName,
-                TypeOfPet = model.TypeOfPet,
-                AgeOfPet = model.AgeOfPet
+                ZipCode = model.ZipCode
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -53,10 +50,7 @@ namespace VetOffice.Services
                         StreetAddress = e.StreetAddress,
                         City = e.City,
                         State = e.State,
-                        ZipCode = e.ZipCode,
-                        PetName = e.PetName,
-                        TypeOfPet = e.TypeOfPet,
-                        AgeOfPet = e.AgeOfPet
+                        ZipCode = e.ZipCode
                     });
                 return query.ToArray();
             }
@@ -66,9 +60,7 @@ namespace VetOffice.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx
-                    .Customers
-                    .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
+                var entity = ctx.Customers.Single(e => e.CustomerId == customerId);
                 return new CustomerDetail
                 {
                     CustomerId = entity.CustomerId,
@@ -77,10 +69,7 @@ namespace VetOffice.Services
                     StreetAddress = entity.StreetAddress,
                     City = entity.City,
                     State = entity.State,
-                    ZipCode = entity.ZipCode,
-                    PetName = entity.PetName,
-                    TypeOfPet = entity.TypeOfPet,
-                    AgeOfPet = entity.AgeOfPet
+                    ZipCode = entity.ZipCode
                 };
             }
         }
@@ -91,15 +80,13 @@ namespace VetOffice.Services
             {
                 var entity = ctx
                     .Customers
-                    .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
+                    .Single(e => e.CustomerId == model.CustomerId);
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.StreetAddress = model.StreetAddress;
                 entity.City = model.City;
                 entity.State = model.State;
                 entity.ZipCode = model.ZipCode;
-                entity.PetName = model.PetName;
-                entity.TypeOfPet = model.TypeOfPet;
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -110,7 +97,7 @@ namespace VetOffice.Services
             {
                 var entity = ctx
                     .Customers
-                    .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
+                    .Single(e => e.CustomerId == customerId);
                 ctx.Customers.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

@@ -40,11 +40,19 @@ namespace VetOffice.Data
     }
     public class Pet
     {
+        [Key]
+        public int PetId { get; set; }
+        public int CustomerId { get; set; }
+        public Guid OwnerId { get; set; }
         [Required]
         public string PetName { get; set; }
         [Required]
         public PetType TypeOfPet { get; set; }
         [Required]
+        public string Breed { get; set; }
+        [Required]
         public PetAge AgeOfPet { get; set; }
+
+        public virtual Customer Customer { get; set; }
     }
 }

@@ -8,9 +8,10 @@ using VetOffice.Data;
 
 namespace VetOffice.Models
 {
-    public class PetEdit
+    public class PetListItem
     {
         public int PetId { get; set; }
+       // public int CustomerId { get; set; }
         [Required]
         [Display(Name = "Pet Name")]
         public string PetName { get; set; }
@@ -23,6 +24,8 @@ namespace VetOffice.Models
         [Display(Name = "Age of Pet")]
         public PetAge AgeOfPet { get; set; }
 
+        //public virtual Customer Customer { get; set; }
+        public override string ToString() => $"[{PetId}] {PetName}";
 
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VetOffice.Data;
 using VetOffice.Models;
 using VetOffice.Services;
 
@@ -15,10 +16,17 @@ namespace VetOffice.WebMVC.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CustomerService(userId);
-            var model = service.GetCustomers();
-            return View(model); 
+            using(var ctx = new ApplicationDbContext())
+            {
+                    var customers = from c in ctx.Customers
+                                select c;
+                    var userId = Guid.Parse(User.Identity.GetUserId());
+                    var service = new CustomerService(userId);
+                    var model = service.GetCustomers();
+
+                    customers = customers.OrderBy(c => c.LastName);
+                    return View(customers.ToList());
+            };
         }
 
         //GET
@@ -52,20 +60,8 @@ namespace VetOffice.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            CustomerService service = CreateCustomerService();
-            CustomerDetail detail = service.GetCustomerById(id);
-            CustomerEdit model = new CustomerEdit
-            {
-                FirstName = detail.FirstName,
-                LastName = detail.LastName,
-                StreetAddress = detail.StreetAddress,
-                City = detail.City,
-                State = detail.State,
-                ZipCode = detail.ZipCode,
-                PetName = detail.PetName,
-                TypeOfPet = detail.TypeOfPet,
-                AgeOfPet = detail.AgeOfPet
-            };
+            var service = CreateCustomerService();
+            var model = service.GetCustomerById(id);
             return View(model);
         }
 

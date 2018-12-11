@@ -35,6 +35,7 @@ namespace VetOffice.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Reason> Reasons { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<Pet> Pets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

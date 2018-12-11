@@ -26,15 +26,7 @@
         <th>
             @Html.DisplayNameFor(model => model.ZipCode)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PetName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TypeOfPet)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AgeOfPet)
-        </th>
+
     </tr>
 
 @foreach (var item in Model) {
@@ -54,15 +46,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.ZipCode)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PetName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TypeOfPet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AgeOfPet)
-        </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.CustomerId}) |
             @Html.ActionLink("Details", "Details", new { id=item.CustomerId }) |

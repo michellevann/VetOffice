@@ -24,6 +24,8 @@ namespace VetOffice.Data
         public string State { get; set; }
         public string ZipCode { get; set; }
 
+        public ICollection<Pet> Pets { get; set; }
+
         [Display(Name = "Full Name")]
         public string FullName
         {

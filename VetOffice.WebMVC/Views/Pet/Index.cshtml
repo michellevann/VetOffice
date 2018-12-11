@@ -1,0 +1,74 @@
+﻿@model IEnumerable<VetOffice.Models.InfoListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            Pet Name
+        </th>
+        <th>
+            Pet Type
+        </th>
+        <th>
+            Pet Breed
+        </th>
+        <th>
+            Pet Age
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @foreach (var pet in item.Pets)
+                {
+                    <div> @Html.DisplayFor(modelItem => pet.PetName)</div>
+                }
+            </td>
+            <td>
+                @foreach (var pet in item.Pets)
+                {
+                    <div> @Html.DisplayFor(modelItem => pet.TypeOfPet)</div>
+                }
+            </td>
+            <td>
+                @foreach (var pet in item.Pets)
+                {
+                    <div> @Html.DisplayFor(modelItem => pet.Breed)</div>
+                }
+            </td>
+            <td>
+                @foreach (var pet in item.Pets)
+                {
+                    <div> @Html.DisplayFor(modelItem => pet.AgeOfPet)</div>
+                }
+            </td>
+            <td>
+                @foreach (var pet in item.Pets)
+                {
+                    <div>
+                        @Html.ActionLink("Edit", "Edit", new { id = pet.PetId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = pet.PetId })
+                    </div>
+                }
+            </td>
+        </tr>
+    }
+
+</table>
