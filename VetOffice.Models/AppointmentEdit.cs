@@ -13,12 +13,9 @@ namespace VetOffice.Models
     {
         [Key]
         public int AppointmentId { get; set; }
-        //public int CustomerId { get; set; }
-        //public int ReasonId { get; set; }
 
         public DateTime NextAppt { get; set; }
-
-        //public virtual Customer Customer { get; set; }
-        //public virtual Reason Reason { get; set; }
+        public VisitReason ReasonForVisit { get; set; }
+        public string ApptTime { get; set; }
     }
 }

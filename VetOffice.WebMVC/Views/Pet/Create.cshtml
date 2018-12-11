@@ -19,7 +19,7 @@
         @Html.LabelFor(model => model.Customer, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Customer, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -35,6 +35,14 @@
         @Html.LabelFor(model => model.TypeOfPet, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EnumDropDownListFor(model => model.TypeOfPet, "Please select type of pet.", new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Breed, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Breed, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Breed, "", new { @class = "text-danger" })
         </div>
     </div>
 

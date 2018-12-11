@@ -25,18 +25,13 @@ namespace VetOffice.Services
                     .Customers
                     .Single(x => x.CustomerId == model.CustomerId);
 
-                var reason = ctx
-
-                    .Reasons
-                    .Single(x => x.ReasonId == model.ReasonId);
-
                 var entity = new Appointment
                 {
                     Customer = customer,
-                    Reason = reason,
                     CustomerId = model.CustomerId,
-                    ReasonId = model.ReasonId,
-                    NextAppt = model.NextAppt
+                    NextAppt = model.NextAppt,
+                    ApptTime = model.ApptTime,
+                    ReasonForVisit = model.ReasonForVisit
                 };
 
                 ctx.Appointments.Add(entity);
@@ -54,8 +49,9 @@ namespace VetOffice.Services
                     {
                         AppointmentId = e.AppointmentId,
                         Customer = e.Customer,
-                        Reason = e.Reason,
-                        NextAppt = e.NextAppt
+                        NextAppt = e.NextAppt,
+                        ApptTime = e.ApptTime,
+                        ReasonForVisit = e.ReasonForVisit
                     });
                 return query.ToArray();
             }
@@ -72,10 +68,10 @@ namespace VetOffice.Services
                 {
                     AppointmentId = entity.AppointmentId,
                     CustomerId = entity.CustomerId,
-                    ReasonId = entity.ReasonId,
                     Customer = entity.Customer,
-                    Reason = entity.Reason,
-                    NextAppt = entity.NextAppt
+                    NextAppt = entity.NextAppt,
+                    ApptTime = entity.ApptTime,
+                    ReasonForVisit = entity.ReasonForVisit
                 };
             }
         }
@@ -88,6 +84,8 @@ namespace VetOffice.Services
                     .Appointments
                     .Single(e => e.AppointmentId == model.AppointmentId);
                 entity.NextAppt = model.NextAppt;
+                entity.ApptTime = model.ApptTime;
+                entity.ReasonForVisit = model.ReasonForVisit;
                 return ctx.SaveChanges() == 1;
             }
         }

@@ -58,7 +58,6 @@
     <Compile Include="CustomerService.cs" />
     <Compile Include="PetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReasonService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

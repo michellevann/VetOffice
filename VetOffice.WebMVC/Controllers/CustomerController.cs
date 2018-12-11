@@ -18,14 +18,14 @@ namespace VetOffice.WebMVC.Controllers
         {
             using(var ctx = new ApplicationDbContext())
             {
-                    var customers = from c in ctx.Customers
-                                select c;
+                    //var customers = from c in ctx.Customers
+                    //            select c;
                     var userId = Guid.Parse(User.Identity.GetUserId());
                     var service = new CustomerService(userId);
                     var model = service.GetCustomers();
 
-                    customers = customers.OrderBy(c => c.LastName);
-                    return View(customers.ToList());
+                    //customers = customers.OrderBy(c => c.LastName);
+                    return View(model);
             };
         }
 
@@ -61,7 +61,17 @@ namespace VetOffice.WebMVC.Controllers
         public ActionResult Edit(int id)
         {
             var service = CreateCustomerService();
-            var model = service.GetCustomerById(id);
+            var detail = service.GetCustomerById(id);
+            var model = new CustomerEdit
+            {
+                CustomerId = detail.CustomerId,
+                FirstName = detail.FirstName,
+                LastName = detail.LastName,
+                StreetAddress = detail.StreetAddress,
+                City = detail.City,
+                State = detail.State,
+                ZipCode = detail.ZipCode
+            };
             return View(model);
         }
 

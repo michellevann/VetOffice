@@ -28,7 +28,6 @@ namespace VetOffice.WebMVC.Controllers
         public ActionResult Create()
         {
             ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FullName");
-            ViewBag.ReasonId = new SelectList(db.Reasons, "ReasonId", "ReasonForVisit");
             return View();
         }
 
@@ -61,7 +60,9 @@ namespace VetOffice.WebMVC.Controllers
             var model = new AppointmentEdit
             {
                 AppointmentId = detail.AppointmentId,
-                NextAppt = detail.NextAppt
+                NextAppt = detail.NextAppt,
+                ApptTime = detail.ApptTime,
+                ReasonForVisit = detail.ReasonForVisit
             };
             return View(model);
         }

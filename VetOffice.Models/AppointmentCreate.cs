@@ -13,13 +13,17 @@ namespace VetOffice.Models
         [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Next Appointment")]
+        [Display(Name = "Appointment Date")]
         public DateTime NextAppt { get; set; }
 
+        [Display(Name = "Appointment Time")]
+        public string ApptTime { get; set; }
+
+        [Display(Name = "Reason for Visit")]
+        public VisitReason ReasonForVisit { get; set; }
+
         public int CustomerId { get; set; }
-        public int ReasonId { get; set; }
 
         public virtual Customer Customer { get; set; }
-        public virtual Reason Reason { get; set; }
     }
 }

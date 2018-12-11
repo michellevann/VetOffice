@@ -57,6 +57,7 @@ namespace VetOffice.Services
                                 PetId = e.PetId,
                                 PetName = e.PetName,
                                 TypeOfPet = e.TypeOfPet,
+                                Breed = e.Breed,
                                 AgeOfPet = e.AgeOfPet
                    });
                 return query.ToList();
@@ -79,6 +80,7 @@ namespace VetOffice.Services
                     CustomerId = model.CustomerId,
                     PetName = model.PetName,
                     TypeOfPet = model.TypeOfPet,
+                    Breed = model.Breed,
                     AgeOfPet = model.AgeOfPet
                 };
 
@@ -114,6 +116,7 @@ namespace VetOffice.Services
                     .Single(e => e.PetId == model.PetId);
                 entity.PetName = model.PetName;
                 entity.TypeOfPet = model.TypeOfPet;
+                entity.Breed = model.Breed;
                 entity.AgeOfPet = model.AgeOfPet;
                 return ctx.SaveChanges() == 1;
             }
