@@ -8,30 +8,15 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Fredericka+the+Great|Fredoka+One|Kranky|Lily+Script+One|Questrial|Ribeye|Work+Sans:400,500,600&amp;subset=latin-ext" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-primary">
-
-        <div class="container">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-            @Html.ActionLink("BowWow & Meow", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Customers", "Index", "Customer", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Pets", "Index", "Pet", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Appointment", "Index", "Appointment", null, new { @class = "nav-link" })</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </nav>
+    <div class="icon-bar fixed-top">
+        <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a>        
+        <a href="@Url.Action("Index","Customer")"><i class="fa fa-user"></i></a>
+        <a href="@Url.Action("Index","Pet")"><i class="fa fa-paw"></i></a>
+        <a href="@Url.Action("Index","Appointment")"><i class="fa fa-calendar-alt"></i></a>
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />

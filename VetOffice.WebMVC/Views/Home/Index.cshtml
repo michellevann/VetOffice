@@ -4,8 +4,14 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="text-lg-left"> BowWow & Meow</h1>
-        <p class="lead"><i>Vet Services</i></p>
-        <a class="btn btn-info btn-lg" href="https://www.amazon.com/gp/browse.html?node=283155&ref_=nav_em_T1_0_4_26_1__bo_t1" role="button">LogIn &rarr;</a>
+        <p class="text-left"><i>~Vet Services~</i></p>
+        <br />
+        <br />
+        <a class="btn btn-info btn-lg" @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</a>
+        <br />
+        <br />
+        <br />
+        <a class="btn btn-info btn-lg" @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</a>
     </div>
 </div>
 

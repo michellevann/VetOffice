@@ -31,26 +31,13 @@ textarea {
     max-width: 280px;
 }
 
-.container {
-    height: 25px;
-}
-
 .jumbotron {
     height: 450px;
-    padding-top: 30px;
+    padding: 30px;
     border: none;
-    padding: 0px;
     background-image: url('assets/business-pug.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.fas fa-paw.h2 {
-    resize:both;
-}
-
-.row {
-    margin: 0;
 }
 
 .text-lg-left {
@@ -65,22 +52,32 @@ textarea {
     font-weight: 700 !important
 }
 
-.lead {
-    color: #fd7e14;
-    font-family: 'Ribeye', cursive;
-    padding-left: 40px;
-    font-size:7em;
+.text-left {
+    padding-left: 50px;
+    font-family: 'Questrial';
+    font-size:15em;
 }
-
-/*.dogImage {
-    height: 250px;
-}
-
-.catImage {
-    height: 250px;
-}*/
 
 .catEkg {
     
     width: 100%;
+}
+
+.icon-bar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    width: 25%;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 25px;
+}
+
+.icon-bar a:hover {
+    background-color: #fd7e14;
 }
