@@ -1,4 +1,9 @@
-﻿body {
+﻿* {
+    margin: 0;
+    max-width: 100%;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #008cba;
@@ -9,7 +14,6 @@
     padding-left: 15px;
     padding-right: 15px;
     min-height: 600px;
-    /*background-image: url() !important;*/
     background-size: cover;
 }
 
@@ -27,12 +31,56 @@ textarea {
     max-width: 280px;
 }
 
-.jumbotron {
-    color: #008cba;
-    height: 300px;
+.container {
+    height: 25px;
 }
 
-.middleButton {
+.jumbotron {
+    height: 450px;
+    padding-top: 30px;
+    border: none;
+    padding: 0px;
+    background-image: url('assets/business-pug.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fas fa-paw.h2 {
+    resize:both;
+}
+
+.row {
+    margin: 0;
+}
+
+.text-lg-left {
+    color: #fd7e14 !important;
+    font-family: 'Ribeye', cursive;
+    font-size: 18em;
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important
+}
+
+.text-md-left {
+    color: #fd7e14;
+    font-family: 'Ribeye', cursive;
+    padding-left: 40px;
+    font-size:7em;
+}
+
+/*.dogImage {
+    height: 250px;
+}
+
+.catImage {
+    height: 250px;
+}*/
+
+.catEkg {
     
-    background-image: url(https://pixabay.com/en/pet-dog-puppy-shy-cute-sleepy-423398/) !important
+    width: 100%;
 }

@@ -210,6 +210,30 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\5a2e179de7e4f6.6673497915129701419498.png" />
+    <Content Include="Content\assets\5a2e18ea090746.902504241512970474037.png" />
+    <Content Include="Content\assets\abstract-1751204_1280.png" />
+    <Content Include="Content\assets\BlackShyPuppy.jpg" />
+    <Content Include="Content\assets\BlackShyPuppy_small.jpg" />
+    <Content Include="Content\assets\blueEyesCat.jpg" />
+    <Content Include="Content\assets\business-pug-working-on-laptop_4460x4460.jpg" />
+    <Content Include="Content\assets\business-pug.jpg" />
+    <Content Include="Content\assets\dog-1191676_1920.jpg" />
+    <Content Include="Content\assets\dog-1912874_1920.jpg" />
+    <Content Include="Content\assets\dogEkg.png" />
+    <Content Include="Content\assets\catEkg.png" />
+    <Content Include="Content\assets\kisspng-dog-cat-pet-veterinarian-physician-the-beauty-pet-doctor-holds-the-dog-5a8374219f6971.156821841518564385653.png" />
+    <Content Include="Content\assets\kisspng-dog-puppy-cat-illustration-vector-cute-puppy-comics-5a7c46488241c8.7216545615180938965335.png" />
+    <Content Include="Content\assets\kisspng-pet-sitting-cat-kitten-puppy-kitten-white-box-5a9a332f24c046.5962638915200550871505.png" />
+    <Content Include="Content\assets\kitten-1169507_1920.jpg" />
+    <Content Include="Content\assets\logo_kitty_2.png" />
+    <Content Include="Content\assets\logo_puppy.png" />
+    <Content Include="Content\assets\poodle-796462_1920.jpg" />
+    <Content Include="Content\assets\small-dog_4460x4460.jpg" />
+    <Content Include="Content\assets\stretching-2747269_1280.png" />
+    <Content Include="Content\assets\veterinarian-3226072_1920.jpg" />
+    <Content Include="Content\assets\veterinary-85925_1920.jpg" />
+    <Content Include="Content\assets\veterinary-doctor-2319417_1920.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\Bootstrap-yeti-min.css" />
@@ -245,7 +269,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
