@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +19,10 @@ namespace VetOffice.WebMVC.Controllers
         {
             using(var ctx = new ApplicationDbContext())
             {
-                    //var customers = from c in ctx.Customers
-                    //            select c;
                     var userId = Guid.Parse(User.Identity.GetUserId());
                     var service = new CustomerService(userId);
                     var model = service.GetCustomers();
 
-                    //customers = customers.OrderBy(c => c.LastName);
                     return View(model);
             };
         }
@@ -112,6 +110,11 @@ namespace VetOffice.WebMVC.Controllers
             service.DeleteCustomer(id);
             TempData["SaveResult"] = "Your appointment was deleted.";
             return RedirectToAction("Index");
+        }
+
+        public ActionResult CreateMultiple()
+        {
+            return View();
         }
 
         private CustomerService CreateCustomerService()

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -104,6 +105,11 @@ namespace VetOffice.WebMVC.Controllers
             service.DeletePet(id);
             TempData["SaveResult"] = "Your pet was deleted.";
             return RedirectToAction("Index");
+        }
+
+        public ActionResult CreateMultiple()
+        {
+            return View();
         }
 
         private PetService CreatePetService()

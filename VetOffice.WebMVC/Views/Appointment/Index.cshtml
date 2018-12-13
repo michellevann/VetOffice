@@ -4,11 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <h1 class="tableHeader">Appointments</h1>
+    <br />
+    <a class="btn btn-info btn-lg" href="@Url.Action("Create","Appointment")">Schedule Appointment</a>
+    <br />
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
 

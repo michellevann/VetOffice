@@ -24,7 +24,7 @@ namespace VetOffice.WebMVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/Bootstrap.css",
-                      "~/Content/Bootstrap-yeti-min.css",
+                      "~/Content/Bootstrap-cerulean.css",
                       "~/Content/site.css"));
         }
     }

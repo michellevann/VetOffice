@@ -216,6 +216,7 @@
     <Content Include="Content\assets\BlackShyPuppy.jpg" />
     <Content Include="Content\assets\BlackShyPuppy_small.jpg" />
     <Content Include="Content\assets\blueEyesCat.jpg" />
+    <Content Include="Content\assets\blueEyesCat_small.jpg" />
     <Content Include="Content\assets\business-pug-working-on-laptop_4460x4460.jpg" />
     <Content Include="Content\assets\business-pug.jpg" />
     <Content Include="Content\assets\dog-1191676_1920.jpg" />
@@ -229,6 +230,7 @@
     <Content Include="Content\assets\logo_kitty_2.png" />
     <Content Include="Content\assets\logo_puppy.png" />
     <Content Include="Content\assets\poodle-796462_1920.jpg" />
+    <Content Include="Content\assets\poodle_small.jpg" />
     <Content Include="Content\assets\small-dog_4460x4460.jpg" />
     <Content Include="Content\assets\stretching-2747269_1280.png" />
     <Content Include="Content\assets\veterinarian-3226072_1920.jpg" />
@@ -236,7 +238,7 @@
     <Content Include="Content\assets\veterinary-doctor-2319417_1920.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\Bootstrap-yeti-min.css" />
+    <Content Include="Content\Bootstrap-cerulean.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />

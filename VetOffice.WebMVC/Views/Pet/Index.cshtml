@@ -4,79 +4,82 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <h1 class="tableHeader">Our Customers & Pets</h1>
+    <br />
+    <a class="btn btn-info btn-lg" href="@Url.Action("Create","Pet")">Add Pet</a>
+    <br />
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table table-hover">
     <thead>
-    <tr>
-        <th scope="col">
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
-        <th scope="col">
-            Pet Name
-        </th>
-        <th scope="col">
-            Pet Type
-        </th>
-        <th scope="col">
-            Pet Breed
-        </th>
-        <th scope="col">
-            Pet Age
-        </th>
-    </tr>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th scope="col">
+                Pet Name
+            </th>
+            <th scope="col">
+                Pet Type
+            </th>
+            <th scope="col">
+                Pet Breed
+            </th>
+            <th scope="col">
+                Pet Age
+            </th>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model)
-    {
-        <tr class="table-dark">
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @foreach (var pet in item.Pets)
-                {
-                    <div> @Html.DisplayFor(modelItem => pet.PetName)</div>
-                }
-            </td>
-            <td>
-                @foreach (var pet in item.Pets)
-                {
-                    <div> @Html.DisplayFor(modelItem => pet.TypeOfPet)</div>
-                }
-            </td>
-            <td>
-                @foreach (var pet in item.Pets)
-                {
-                    <div> @Html.DisplayFor(modelItem => pet.Breed)</div>
-                }
-            </td>
-            <td>
-                @foreach (var pet in item.Pets)
-                {
-                    <div> @Html.DisplayFor(modelItem => pet.AgeOfPet)</div>
-                }
-            </td>
-            <td>
-                @foreach (var pet in item.Pets)
-                {
-                    <div>
-                        @Html.ActionLink("Edit", "Edit", new { id = pet.PetId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = pet.PetId })
-                    </div>
-                }
-            </td>
-        </tr>
-    }
-
+        @foreach (var item in Model)
+        {
+           <tr class="table">
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @foreach (var pet in item.Pets)
+                    {
+                        <div> @Html.DisplayFor(modelItem => pet.PetName)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var pet in item.Pets)
+                    {
+                        <div> @Html.DisplayFor(modelItem => pet.TypeOfPet)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var pet in item.Pets)
+                    {
+                        <div> @Html.DisplayFor(modelItem => pet.Breed)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var pet in item.Pets)
+                    {
+                        <div> @Html.DisplayFor(modelItem => pet.AgeOfPet)</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var pet in item.Pets)
+                    {
+                        <button class="btn btn-info btn-lg"> @Html.ActionLink("Edit", "Edit", "Pet", routeValues: null, htmlAttributes: new { id = "registerLink" })</button>
+                        <button class="btn btn-info btn-lg"> @Html.ActionLink("Delete", "Delete", "Pet", routeValues: null, htmlAttributes: new { id = "registerLink" })</button>
+                        <br/><br/>
+                    }
+                </td>
+            </tr>
+          }
+    </tbody>
 </table>
 
+<div class="clients">
+    <p>We <span class="glyphicon"> &hearts;</span> our Cute Clients ...</p>
+</div>
 
 
-    
-            
- 
+
+
+

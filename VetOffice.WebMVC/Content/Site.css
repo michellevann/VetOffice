@@ -58,6 +58,16 @@ textarea {
     font-size:15em;
 }
 
+.clients {
+    font-family: 'Emilys Candy';
+    font-size: 4em;
+    color: #02325f;
+}
+
+.glyphicon {
+    color: #fd7e14;
+}
+
 .catEkg {
     
     width: 100%;
@@ -65,8 +75,7 @@ textarea {
 
 .icon-bar {
     width: 100%;
-    background-color: #555;
-    overflow: auto;
+    background-image: linear-gradient(#04519b, #033C73 60%, #02325f);
 }
 
 .icon-bar a {
@@ -80,4 +89,16 @@ textarea {
 
 .icon-bar a:hover {
     background-color: #fd7e14;
+}
+
+#animalPic {
+    height: 250px;
+    border-color: #555;
+    border: 10px;
+}
+
+.tableHeader {
+    font-family: Ribeye, cursive;
+    font-size: 4em;
+    color: #fd7e14;
 }
