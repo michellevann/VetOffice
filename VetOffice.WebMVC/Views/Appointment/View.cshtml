@@ -1,32 +1,27 @@
 ﻿@model VetOffice.Models.AppointmentCreate
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "View";
 }
 
-<div class="container">
-    <h1 class="tableHeader">New Appointment</h1>
-    <br />
-    <br />
-</div>
+<h2>View</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
+    
+   <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-            <div class="form-group">
-                <p class="customer">Customer's Name</p>
-                <div class="col-md-10">
-                    @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            <p>Customer's Name</p>
+            <div class="col-md-10">
+                @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
-                <p class="pet">Pet's Name</p>
+                <p>Pet's Name</p>
                 <div class="col-md-10">
                     <textarea class="form-control" id="exampleTextarea" rows="1"></textarea>
                 </div>
@@ -49,8 +44,8 @@
             </div>
             <br />
             <div class="form-group">
-                <p>Reason For Visit</p>
-                <select class="form-control" style="margin-left:14px;">
+                <p>Reason For Visit</</p>
+                <select class="form-control">
                     <option>~Please select~</option>
                     <option>Annual Checkup</option>
                     <option>Vaccinations</option>
@@ -62,15 +57,18 @@
                     <option>Emergency Services</option>
                 </select>
             </div>
+        </div>
         <br />
         <div class="form-control-lg">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Add" class="btn btn-info btn-lg" />
-                <a class="btn btn-info btn-lg" href="@Url.Action("Index","Appointment")">Back To List</a>
+                <a class="btn btn-info btn-lg" href="@Url.Action("Index", "Appointment")">Back To List</a>
             </div>
         </div>
     </div>
+
 }
 
-
-
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
