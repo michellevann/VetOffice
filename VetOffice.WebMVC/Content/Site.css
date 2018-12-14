@@ -11,6 +11,7 @@ body {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    padding-top: 50px;
     padding-left: 15px;
     padding-right: 15px;
     min-height: 600px;
@@ -35,17 +36,30 @@ textarea {
     height: 450px;
     padding: 30px;
     border: none;
-    background-image: url('assets/business-pug.jpg');
+    background-image: url('assets/pugHeader.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+#jumboShadow {
+    border: 1px solid;
+}
+
+.buttonHolder {
+    padding-left:90px;
+}
+
+#jumboButton {
+    padding-left:30px;
+    padding-right:30px;
 }
 
 .text-lg-left {
     color: #fd7e14 !important;
     font-family: 'Ribeye', cursive;
-    font-size: 18em;
+    font-size: 5.6em !important;
     padding-top: 50px;
-    padding-left: 30px;
+    padding-right: 10px;
 }
 
 .font-weight-bold {
@@ -68,7 +82,7 @@ textarea {
 }
 
 .glyphicon {
-    color: #fd7e14;
+    color: #C71C22;
 }
 
 .catEkg {
@@ -87,7 +101,7 @@ textarea {
     text-align: center;
     transition: all 0.3s ease;
     color: white;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 .icon-bar a:hover {
@@ -144,6 +158,12 @@ textarea {
 
 .card-text {
     font-size: 1.3em;
+}
+
+
+.inner {
+    margin: 0px !important;
+    width: 270px;
 }
 
 .ekg {
