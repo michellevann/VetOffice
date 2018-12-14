@@ -46,9 +46,8 @@
                     @Html.DisplayFor(modelItem => item.ReasonForVisit)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.AppointmentId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentId })
+                    <button class="btn btn-info btn-lg"> @Html.ActionLink("Edit", "Edit", "Appointment", new { id = item.AppointmentId }, null) </button>
+                    <button class="btn btn-info btn-lg"> @Html.ActionLink("Delete", "Delete", "Appointment", new { id = item.AppointmentId }, null)</button>
                 </td>
             </tr>
         }

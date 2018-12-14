@@ -180,4 +180,7 @@ textarea {
     width: 125px;
 }
 
-
+.subtitle {
+    font-size: 2em;
+    color: white;
+}

@@ -4,13 +4,15 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="container">
+    <h1 class="tableHeader">Delete Appointment</h1>
+    <br />
+    <br />
+</div>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>AppointmentDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
+    <div class="form-horizontal">
+        <hr />
         <dt>
             @Html.DisplayNameFor(model => model.Customer)
         </dt>
@@ -44,7 +46,7 @@
         </dd>
 
 
-    </dl>
+    </div>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
