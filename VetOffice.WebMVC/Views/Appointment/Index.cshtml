@@ -11,43 +11,50 @@
     <br />
 </div>
 
-<table class="table">
-    <tr>
+<table class="table table-hover">
+    <thead>
+        <tr>
 
-        <th>
-            @Html.DisplayNameFor(model => model.Customer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NextAppt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ApptTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReasonForVisit)
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NextAppt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ApptTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReasonForVisit)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.AppointmentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentId })
-        </td>
-    </tr>
-}
-
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NextAppt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApptTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReasonForVisit)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table table-secondary">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NextAppt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApptTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReasonForVisit)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AppointmentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentId })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+<div class="clients">
+    <p>We <span class="glyphicon"> &hearts;</span> our Cute Clients ...</p>
+</div>

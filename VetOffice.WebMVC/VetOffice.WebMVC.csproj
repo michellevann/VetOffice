@@ -219,6 +219,7 @@
     <Content Include="Content\assets\blueEyesCat_small.jpg" />
     <Content Include="Content\assets\business-pug-working-on-laptop_4460x4460.jpg" />
     <Content Include="Content\assets\business-pug.jpg" />
+    <Content Include="Content\assets\catEkg_half.png" />
     <Content Include="Content\assets\dog-1191676_1920.jpg" />
     <Content Include="Content\assets\dog-1912874_1920.jpg" />
     <Content Include="Content\assets\dogEkg.png" />
@@ -229,8 +230,10 @@
     <Content Include="Content\assets\kitten-1169507_1920.jpg" />
     <Content Include="Content\assets\logo_kitty_2.png" />
     <Content Include="Content\assets\logo_puppy.png" />
+    <Content Include="Content\assets\pet-sign.png" />
     <Content Include="Content\assets\poodle-796462_1920.jpg" />
     <Content Include="Content\assets\poodle_small.jpg" />
+    <Content Include="Content\assets\sleepyPuppy_small.jpg" />
     <Content Include="Content\assets\small-dog_4460x4460.jpg" />
     <Content Include="Content\assets\stretching-2747269_1280.png" />
     <Content Include="Content\assets\veterinarian-3226072_1920.jpg" />

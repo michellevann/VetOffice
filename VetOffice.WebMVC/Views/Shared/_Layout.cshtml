@@ -7,22 +7,26 @@
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Fredericka+the+Great|Fredoka+One|Kranky|Lily+Script+One|Questrial|Ribeye|Work+Sans:400,500,600&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Domine|Emilys+Candy|Fredericka+the+Great|Fredoka+One|Kranky|Lily+Script+One|Questrial|Ribeye|Work+Sans:400,500,600&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
 <body>
     <div class="icon-bar fixed-top">
-        <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a>        
+        <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a>
         <a href="@Url.Action("Index","Customer")"><i class="fa fa-user"></i></a>
         <a href="@Url.Action("Index","Pet")"><i class="fa fa-paw"></i></a>
         <a href="@Url.Action("Index","Appointment")"><i class="fa fa-calendar-alt"></i></a>
+        <a href="@Url.Action("Index","Appointment")"><i class="fa fa-sign-out-alt"></i></a>
+
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
 
         <footer class="text-center">
-            <p>&copy; @DateTime.Now.Year BowWow & Meow</p>
+            <div style="display: flex; justify-content: center;">
+                <img src="~/Content/assets/catEkg_half.png" class="ekg" alt="catEkg" />
+            </div>
+            <p class="footy">&copy; @DateTime.Now.Year BowWow & Meow</p>
         </footer>
     </div>
 

@@ -55,7 +55,10 @@ textarea {
 .text-left {
     padding-left: 50px;
     font-family: 'Questrial';
-    font-size:15em;
+}
+
+.text-left i {
+    font-size: 2em;
 }
 
 .clients {
@@ -80,7 +83,7 @@ textarea {
 
 .icon-bar a {
     float: left;
-    width: 25%;
+    width: 20%;
     text-align: center;
     transition: all 0.3s ease;
     color: white;
@@ -98,7 +101,57 @@ textarea {
 }
 
 .tableHeader {
-    font-family: Ribeye, cursive;
+    font-family: Domine, serif;
     font-size: 4em;
     color: #fd7e14;
+}
+
+.table {
+    font-size: 1.3em;
+}
+
+.form-control-lg {
+    color: white;
+}
+
+.centered {
+    margin: auto;
+    max-width: 800px;
+}
+
+.centeredTwo {
+    margin: 0px;
+    max-width: 1200px;
+}
+
+.card.mb-3 {
+    margin: 0px !important;
+    display: inline-block;
+}
+
+.card-header {
+    font-family: Questrial, sans-serif;
+    font-size: 2em;
+}
+
+.cards {
+    display: inline-block;
+}
+
+.card-title {
+    color: #033C73;
+}
+
+.card-text {
+    font-size: 1.3em;
+}
+
+.ekg {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.footy {
+    font-size: 2em;
 }
