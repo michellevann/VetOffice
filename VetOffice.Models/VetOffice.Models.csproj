@@ -54,19 +54,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppointmentCreate.cs" />
-    <Compile Include="AppointmentDetail.cs" />
-    <Compile Include="AppointmentEdit.cs" />
-    <Compile Include="AppointmentListItem.cs" />
-    <Compile Include="CustomerCreate.cs" />
-    <Compile Include="CustomerDetail.cs" />
-    <Compile Include="CustomerEdit.cs" />
-    <Compile Include="CustomerListItem.cs" />
-    <Compile Include="InfoListItem.cs" />
-    <Compile Include="PetCreate.cs" />
-    <Compile Include="PetDetail.cs" />
-    <Compile Include="PetEdit.cs" />
-    <Compile Include="PetListItem.cs" />
+    <Compile Include="Appointment\AppointmentCreate.cs" />
+    <Compile Include="Appointment\AppointmentDetail.cs" />
+    <Compile Include="Appointment\AppointmentEdit.cs" />
+    <Compile Include="Appointment\AppointmentListItem.cs" />
+    <Compile Include="Customer\CustomerCreate.cs" />
+    <Compile Include="Customer\CustomerDetail.cs" />
+    <Compile Include="Customer\CustomerEdit.cs" />
+    <Compile Include="Customer\CustomerListItem.cs" />
+    <Compile Include="Pet\InfoListItem.cs" />
+    <Compile Include="Pet\PetCreate.cs" />
+    <Compile Include="Pet\PetDetail.cs" />
+    <Compile Include="Pet\PetEdit.cs" />
+    <Compile Include="Pet\PetListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserProfileModel.cs" />
   </ItemGroup>

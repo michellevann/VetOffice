@@ -11,14 +11,22 @@
 </div>
 
 <div>
-    <div class="form-horizontal">
-        <hr />
+    <dl class="form-horizontal">
+
         <dt>
-            @Html.DisplayNameFor(model => model.Customer)
+            @Html.DisplayNameFor(model => model.Pet.Customer.FullName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Customer.FullName)
+            @Html.DisplayFor(model => model.Pet.Customer.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pet.PetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pet.PetName)
         </dd>
 
         <dt>
@@ -46,14 +54,17 @@
         </dd>
 
 
-    </div>
+    </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+        <div class="form-control-lg">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-info btn-lg" />
+                <a class="btn btn-info btn-lg" href="@Url.Action("Index","Appointment")">Back To List</a>
+            </div>
         </div>
     }
 </div>

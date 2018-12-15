@@ -16,6 +16,31 @@ namespace VetOffice.Services
             _userId = userId;
         }
 
+        public bool CreatePet(PetCreate model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var customer = ctx
+
+                    .Customers
+                    .Single(x => x.CustomerId == model.CustomerId);
+
+                var entity = new Pet
+                {
+                    PetId = model.PetId,
+                    CustomerId = model.CustomerId,
+                    Customer = customer,
+                    PetName = model.PetName,
+                    TypeOfPet = model.TypeOfPet,
+                    Breed = model.Breed,
+                    AgeOfPet = model.AgeOfPet
+                };
+
+                ctx.Pets.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         public IEnumerable<InfoListItem> GetPets()
         {
             List<InfoListItem> infoListItems = new List<InfoListItem>();
@@ -37,14 +62,14 @@ namespace VetOffice.Services
                     infoListItems.Add(new InfoListItem
                     {
                         CustomerId = id,
-                        FirstName = query.FirstName,
-                        LastName = query.LastName,
+                        FullName = query.FullName,
                         Pets = GetCustomerPetsById(id).ToList()
                     });
                 }
                 return infoListItems;
             }
         }
+
         public IEnumerable<PetListItem> GetCustomerPetsById(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -54,41 +79,15 @@ namespace VetOffice.Services
                    .Where(e => e.CustomerId == customerId)
                    .Select(e => new PetListItem
                    {
-                                PetId = e.PetId,
-                                PetName = e.PetName,
-                                TypeOfPet = e.TypeOfPet,
-                                Breed = e.Breed,
-                                AgeOfPet = e.AgeOfPet
+                       PetId = e.PetId,
+                       PetName = e.PetName,
+                       TypeOfPet = e.TypeOfPet,
+                       Breed = e.Breed,
+                       AgeOfPet = e.AgeOfPet
                    });
                 return query.ToList();
             }
         }
-
-        public bool CreatePet(PetCreate model)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var customer = ctx
-
-                    .Customers
-                    .Single(x => x.CustomerId == model.CustomerId);
-
-                var entity = new Pet
-                {
-                    PetId = model.PetId,
-                    Customer = customer,
-                    CustomerId = model.CustomerId,
-                    PetName = model.PetName,
-                    TypeOfPet = model.TypeOfPet,
-                    Breed = model.Breed,
-                    AgeOfPet = model.AgeOfPet
-                };
-
-                ctx.Pets.Add(entity);
-                return ctx.SaveChanges() == 1;
-            }
-        }
-
 
         public PetDetail GetPetById(int petId)
         {
@@ -102,6 +101,7 @@ namespace VetOffice.Services
                     Customer = entity.Customer,
                     PetName = entity.PetName,
                     TypeOfPet = entity.TypeOfPet,
+                    Breed = entity.Breed,
                     AgeOfPet = entity.AgeOfPet
                 };
             }

@@ -20,15 +20,16 @@ namespace VetOffice.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var customer = ctx
-
-                    .Customers
-                    .Single(x => x.CustomerId == model.CustomerId);
-
+                var pet = ctx
+                    .Pets
+                    .Single(x => x.PetId == model.PetId);
+              
                 var entity = new Appointment
                 {
-                    Customer = customer,
+                    AppointmentId = model.AppointmentId,
                     CustomerId = model.CustomerId,
+                    PetId = model.PetId,
+                    Pet = pet,
                     NextAppt = model.NextAppt,
                     ApptTime = model.ApptTime,
                     ReasonForVisit = model.ReasonForVisit
@@ -48,7 +49,10 @@ namespace VetOffice.Services
                     .Select(e => new AppointmentListItem
                     {
                         AppointmentId = e.AppointmentId,
-                        Customer = e.Customer,
+                        CustomerId = e.CustomerId,
+                        PetId = e.PetId,
+                        Pet = e.Pet,
+                        FullName = e.Pet.Customer.FullName,
                         NextAppt = e.NextAppt,
                         ApptTime = e.ApptTime,
                         ReasonForVisit = e.ReasonForVisit
@@ -68,7 +72,9 @@ namespace VetOffice.Services
                 {
                     AppointmentId = entity.AppointmentId,
                     CustomerId = entity.CustomerId,
-                    Customer = entity.Customer,
+                    PetId = entity.PetId,
+                    Pet = entity.Pet,
+                    FullName = entity.Pet.Customer.FullName,
                     NextAppt = entity.NextAppt,
                     ApptTime = entity.ApptTime,
                     ReasonForVisit = entity.ReasonForVisit
@@ -83,6 +89,7 @@ namespace VetOffice.Services
                 var entity = ctx
                     .Appointments
                     .Single(e => e.AppointmentId == model.AppointmentId);
+
                 entity.NextAppt = model.NextAppt;
                 entity.ApptTime = model.ApptTime;
                 entity.ReasonForVisit = model.ReasonForVisit;

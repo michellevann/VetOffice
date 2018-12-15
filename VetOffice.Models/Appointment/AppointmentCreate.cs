@@ -10,20 +10,23 @@ namespace VetOffice.Models
 {
     public class AppointmentCreate
     {
-        [Required]
+        public int AppointmentId { get; set; }
+        public int CustomerId { get; set; }
+        public int PetId { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Appointment Date")]
         public DateTime NextAppt { get; set; }
 
+        [DataType(DataType.Time)]
+        [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
         [Display(Name = "Appointment Time")]
-        public string ApptTime { get; set; }
+        public DateTime ApptTime { get; set; }
 
         [Display(Name = "Reason for Visit")]
         public VisitReason ReasonForVisit { get; set; }
 
-        public int CustomerId { get; set; }
-
-        public virtual Customer Customer { get; set; }
+        public virtual Pet Pet { get; set; }
     }
 }

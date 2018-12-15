@@ -11,18 +11,10 @@ namespace VetOffice.Models
     {
         [Key]
         public int CustomerId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
 
         [Display(Name = "Full Name")]
-        public string FullName
-        {
-            get
-            {
-                return FirstName + " " + LastName;
-            }
-        }
-
+        public string FullName { get; set; }
+     
         public List<PetListItem> Pets { get; set; }
     }
 }

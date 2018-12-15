@@ -28,6 +28,7 @@ namespace VetOffice.WebMVC.Controllers
         public ActionResult Create()
         {
             ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FullName");
+            ViewBag.PetId = new SelectList(db.Pets, "PetId", "PetName");
             return View();
         }
 

@@ -16,7 +16,10 @@
         <tr>
 
             <th>
-                @Html.DisplayNameFor(model => model.Customer)
+                @Html.DisplayNameFor(model => model.Pet.Customer.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pet.PetName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NextAppt)
@@ -32,24 +35,27 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr class="table table-secondary">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Customer.FullName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NextAppt)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ApptTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReasonForVisit)
-                </td>
-                <td>
-                    <button class="btn btn-info btn-lg"> @Html.ActionLink("Edit", "Edit", "Appointment", new { id = item.AppointmentId }, null) </button>
-                    <button class="btn btn-info btn-lg"> @Html.ActionLink("Delete", "Delete", "Appointment", new { id = item.AppointmentId }, null)</button>
-                </td>
-            </tr>
+        <tr class="table table-secondary">
+            <td>
+                @Html.DisplayFor(modelItem => item.Pet.Customer.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pet.PetName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NextAppt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApptTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReasonForVisit)
+            </td>
+            <td>
+                <button class="btn btn-info btn-lg"> @Html.ActionLink("Edit", "Edit", "Appointment", new { id = item.AppointmentId }, null) </button>
+                <button class="btn btn-info btn-lg"> @Html.ActionLink("Delete", "Delete", "Appointment", new { id = item.AppointmentId }, null)</button>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -14,11 +14,28 @@ namespace VetOffice.Data.Migrations
                         AppointmentId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
                         CustomerId = c.Int(nullable: false),
+                        PetId = c.Int(nullable: false),
                         NextAppt = c.DateTime(nullable: false),
                         ApptTime = c.String(),
                         ReasonForVisit = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.AppointmentId)
+                .ForeignKey("dbo.Pet", t => t.PetId, cascadeDelete: true)
+                .Index(t => t.PetId);
+            
+            CreateTable(
+                "dbo.Pet",
+                c => new
+                    {
+                        PetId = c.Int(nullable: false, identity: true),
+                        CustomerId = c.Int(nullable: false),
+                        OwnerId = c.Guid(nullable: false),
+                        PetName = c.String(nullable: false),
+                        TypeOfPet = c.Int(nullable: false),
+                        Breed = c.String(nullable: false),
+                        AgeOfPet = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.PetId)
                 .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
                 .Index(t => t.CustomerId);
             
@@ -36,22 +53,6 @@ namespace VetOffice.Data.Migrations
                         ZipCode = c.String(),
                     })
                 .PrimaryKey(t => t.CustomerId);
-            
-            CreateTable(
-                "dbo.Pet",
-                c => new
-                    {
-                        PetId = c.Int(nullable: false, identity: true),
-                        CustomerId = c.Int(nullable: false),
-                        OwnerId = c.Guid(nullable: false),
-                        PetName = c.String(nullable: false),
-                        TypeOfPet = c.Int(nullable: false),
-                        Breed = c.String(nullable: false),
-                        AgeOfPet = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.PetId)
-                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
-                .Index(t => t.CustomerId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -131,21 +132,21 @@ namespace VetOffice.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Appointment", "CustomerId", "dbo.Customer");
+            DropForeignKey("dbo.Appointment", "PetId", "dbo.Pet");
             DropForeignKey("dbo.Pet", "CustomerId", "dbo.Customer");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.Pet", new[] { "CustomerId" });
-            DropIndex("dbo.Appointment", new[] { "CustomerId" });
+            DropIndex("dbo.Appointment", new[] { "PetId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Pet");
             DropTable("dbo.Customer");
+            DropTable("dbo.Pet");
             DropTable("dbo.Appointment");
         }
     }

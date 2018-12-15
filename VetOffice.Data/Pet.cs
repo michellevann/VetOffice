@@ -44,6 +44,7 @@ namespace VetOffice.Data
         public int PetId { get; set; }
         public int CustomerId { get; set; }
         public Guid OwnerId { get; set; }
+
         [Required]
         public string PetName { get; set; }
         [Required]

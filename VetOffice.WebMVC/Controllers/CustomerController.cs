@@ -63,12 +63,15 @@ namespace VetOffice.WebMVC.Controllers
             var model = new CustomerEdit
             {
                 CustomerId = detail.CustomerId,
-                FirstName = detail.FirstName,
-                LastName = detail.LastName,
+                FullName = detail.FullName,
                 StreetAddress = detail.StreetAddress,
+                Apt = detail.Apt,
                 City = detail.City,
                 State = detail.State,
-                ZipCode = detail.ZipCode
+                ZipCode = detail.ZipCode,
+                Phone = detail.Phone,
+                CanText = detail.CanText,
+                Email = detail.Email
             };
             return View(model);
         }

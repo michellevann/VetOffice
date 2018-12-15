@@ -8,21 +8,21 @@ using VetOffice.Data;
 
 namespace VetOffice.Models
 {
-    public class PetEdit
+    public class PetListItem
     {
         public int PetId { get; set; }
-        [Required]
+
         [Display(Name = "Pet Name")]
         public string PetName { get; set; }
-        [Required]
+
         [Display(Name = "Type of Pet")]
         public PetType TypeOfPet { get; set; }
-        [Required]
+
         public string Breed { get; set; }
-        [Required]
+
         [Display(Name = "Age of Pet")]
         public PetAge AgeOfPet { get; set; }
 
-
+        public override string ToString() => $"[{PetId}] {PetName}";
     }
 }

@@ -30,12 +30,15 @@ namespace VetOffice.Data
         public int AppointmentId { get; set; }
         public Guid OwnerId { get; set; }
         public int CustomerId { get; set; }
+        public int PetId { get; set; }
+
         [Required]
         public DateTime NextAppt { get; set; }
-        public string ApptTime { get; set; }
+        [Required]
+        public DateTime ApptTime { get; set; }
         [Required]
         public VisitReason ReasonForVisit { get; set; }
 
-        public virtual Customer Customer { get; set; }
+        public virtual Pet Pet { get; set; }
     }
 }

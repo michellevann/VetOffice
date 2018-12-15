@@ -57,9 +57,13 @@
     <Compile Include="Appointment.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201812111936384_initial.cs" />
-    <Compile Include="Migrations\201812111936384_initial.Designer.cs">
-      <DependentUpon>201812111936384_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201812142155121_initial.cs" />
+    <Compile Include="Migrations\201812142155121_initial.Designer.cs">
+      <DependentUpon>201812142155121_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812151730314_addedDataToCustomer.cs" />
+    <Compile Include="Migrations\201812151730314_addedDataToCustomer.Designer.cs">
+      <DependentUpon>201812151730314_addedDataToCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pet.cs" />
@@ -70,8 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812111936384_initial.resx">
-      <DependentUpon>201812111936384_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812142155121_initial.resx">
+      <DependentUpon>201812142155121_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812151730314_addedDataToCustomer.resx">
+      <DependentUpon>201812151730314_addedDataToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

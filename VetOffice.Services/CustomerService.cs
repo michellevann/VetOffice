@@ -20,13 +20,15 @@ namespace VetOffice.Services
         {
             var entity = new Customer()
             {
-                OwnerId = _userId,
-                FirstName = model.FirstName,
-                LastName = model.LastName,
+                CustomerId = model.CustomerId,
+                FullName = model.FullName,
                 StreetAddress = model.StreetAddress,
                 City = model.City,
                 State = model.State,
-                ZipCode = model.ZipCode
+                ZipCode = model.ZipCode,
+                Phone = model.Phone,
+                CanText = model.CanText,
+                Email = model.Email
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -45,12 +47,15 @@ namespace VetOffice.Services
                     .Select(e => new CustomerListItem
                     {
                         CustomerId = e.CustomerId,
-                        FirstName = e.FirstName,
-                        LastName = e.LastName,
+                        FullName = e.FullName,
                         StreetAddress = e.StreetAddress,
+                        Apt = e.Apt,
                         City = e.City,
                         State = e.State,
-                        ZipCode = e.ZipCode
+                        ZipCode = e.ZipCode,
+                        Phone = e.Phone,
+                        CanText = e.CanText,
+                        Email = e.Email
                     });
                 return query.ToArray();
             }
@@ -64,12 +69,15 @@ namespace VetOffice.Services
                 return new CustomerDetail
                 {
                     CustomerId = entity.CustomerId,
-                    FirstName = entity.FirstName,
-                    LastName = entity.LastName,
+                    FullName = entity.FullName,
                     StreetAddress = entity.StreetAddress,
+                    Apt = entity.Apt,
                     City = entity.City,
                     State = entity.State,
-                    ZipCode = entity.ZipCode
+                    ZipCode = entity.ZipCode,
+                    Phone = entity.Phone,
+                    CanText = entity.CanText,
+                    Email = entity.Email
                 };
             }
         }
@@ -81,12 +89,15 @@ namespace VetOffice.Services
                 var entity = ctx
                     .Customers
                     .Single(e => e.CustomerId == model.CustomerId);
-                entity.FirstName = model.FirstName;
-                entity.LastName = model.LastName;
+                entity.FullName = model.FullName;
                 entity.StreetAddress = model.StreetAddress;
+                entity.Apt = model.Apt;
                 entity.City = model.City;
                 entity.State = model.State;
                 entity.ZipCode = model.ZipCode;
+                entity.Phone = model.Phone;
+                entity.CanText = model.CanText;
+                entity.Email = model.Email;
                 return ctx.SaveChanges() == 1;
             }
         }
