@@ -211,8 +211,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\Backgrounds\adorable-dog_925x.jpg" />
+    <Content Include="Content\assets\Backgrounds\blueDogHouse.jpg" />
     <Content Include="Content\assets\Backgrounds\business-pug-working-on-laptop_4460x4460.jpg" />
     <Content Include="Content\assets\Backgrounds\business-pug.jpg" />
+    <Content Include="Content\assets\Backgrounds\mysaell-armendariz-559174-unsplash.jpg" />
     <Content Include="Content\assets\Backgrounds\pugHeader.jpg" />
     <Content Include="Content\assets\Backgrounds\small-dog_4460x4460.jpg" />
     <Content Include="Content\assets\Backgrounds\small-dog_small.jpg" />

@@ -17,12 +17,10 @@
         <a href="@Url.Action("Index","Customer")"><i class="fa fa-user"></i></a>
         <a href="@Url.Action("Index","Pet")"><i class="fa fa-paw"></i></a>
         <a href="@Url.Action("Index","Appointment")"><i class="fa fa-calendar-alt"></i></a>
-        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
-            @Url.Action("Index","Manage")
-
-            <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-out-alt"></i></a>
+            <a href="javascript:document.getElementById('logoutForm').submit()"@Url.Action("Index","Manage")><i class="fa fa-sign-out-alt"></i></a>
         }
     </div>
     <div class="container body-content">

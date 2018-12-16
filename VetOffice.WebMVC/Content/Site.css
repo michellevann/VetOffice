@@ -20,20 +20,6 @@ body {
     background-size: cover;
 }
 
-.clients {
-    font-family: 'Emilys Candy';
-    font-size: 4em;
-    color: #02325f;
-}
-
-.glyphicon {
-    color: #C71C22;
-}
-
-.catEkg {
-    width: 100%;
-}
-
 .icon-bar {
     width: 100%;
     background-image: linear-gradient(#04519b, #033C73 60%, #02325f);
@@ -48,6 +34,15 @@ body {
     font-size: 35px;
 }
 
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    height: 52.5px;
+}
+
 .icon-bar a:hover {
     background-color: #C71C22;
 }
@@ -57,6 +52,16 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.clients {
+    font-family: 'Emilys Candy';
+    font-size: 4em;
+    color: #02325f;
+}
+
+.glyphicon {
+    color: #C71C22;
 }
 
 .ekg {
@@ -127,7 +132,7 @@ textarea {
 }
 
 .container {
-    padding: 0;
+    padding-left: 0;
 }
 
 thead {
@@ -150,7 +155,7 @@ thead {
     font-size: 1.3em;
 }
 
-/*---------------------FORMS------------------------------*/
+/*---------------------FORMS-----(.form-control was select)-------------------------*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -159,12 +164,12 @@ thead {
     white-space: normal;
 }
 
-select {
+.form-control {
     display: block;
     width: 100%;
     height: calc(2.25rem + 2px);
     padding: 0.375rem 0.75rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.5;
     color: #495057;
     background-color: #fff;
@@ -201,6 +206,12 @@ select {
     padding-top: 10%;
 }
 
+#edit {
+    font-size: 1.3em;
+    padding-top: 0;
+    padding-left: 5%;
+}
+
 #lessPadding {
     padding-top: 1%;
 }
@@ -219,23 +230,45 @@ select {
 }
 
 #NextAppt.form-control.text-box.single-line {
-    font-size: 1em;
+    font-size: .8em;
 }
 
 #ApptTime.form-control.text-box.single-line {
-    font-size: 1em;
+    font-size: .8em;
 }
 
 #PetName.form-control.text-box.single-line {
-    font-size: 1em;
+    font-size: .8em;
 }
 
 #Breed.form-control.text-box.single-line {
-    font-size: 1em;
+    font-size: .8em;
 }
 
+.backgroundImageForLogin {
+    background-image:url(assets/Backgrounds/blueDogHouse.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 640px;
+    border-radius: 2%;
+}
 
+#loginFormContainer {
+    float: right;
+}
 
+#loginHeaderContainer {
+    height: 10%;
+}
+
+#loginHeaderFont {
+    color:#2FA4E7;
+    font-size: 4em;
+}
+
+#loginFormGroup {
+    font-size: 1.3em;
+}
 
 
 .centered {
