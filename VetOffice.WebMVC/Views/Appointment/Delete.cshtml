@@ -4,67 +4,67 @@
     ViewBag.Title = "Delete";
 }
 
-<div class="container">
-    <h1 class="tableHeader">Delete Appointment</h1>
-    <br />
-    <br />
-</div>
-
-<div>
-    <dl class="form-horizontal">
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pet.Customer.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pet.Customer.FullName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pet.PetName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pet.PetName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NextAppt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NextAppt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ApptTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ApptTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ReasonForVisit)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ReasonForVisit)
-        </dd>
-
-
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-control-lg">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Delete" class="btn btn-info btn-lg" />
-                <a class="btn btn-info btn-lg" href="@Url.Action("Index","Appointment")">Back To List</a>
-            </div>
+<div class="backgroundImageForDeleteForms">
+    <div class="formContainer" style="height:500px;">
+        <div class="container" style="padding-left:0; height:20%;">
+            <p class="tableHeader" style="display: flex; justify-content:flex-start;">Delete Appointment</p>
+            <br />
+            <br />
         </div>
-    }
+
+        <dl class="form-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Pet.Customer.FullName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Pet.Customer.FullName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Pet.PetName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Pet.PetName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NextAppt)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NextAppt)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ApptTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ApptTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ReasonForVisit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ReasonForVisit)
+            </dd>
+        </dl>
+        <br />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-control-lg">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Delete" class="btn btn-info btn-lg" />
+                    <a class="btn btn-info btn-lg" href="@Url.Action("Index","Appointment")">Back To List</a>
+                </div>
+            </div>
+        }
+    </div>
 </div>

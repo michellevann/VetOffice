@@ -9,6 +9,8 @@
     <br />
     <a class="btn btn-info btn-lg" href="@Url.Action("Create","Pet")">Add Pet</a>
     <br />
+    <br />
+    <br />
 </div>
 
 <table class="table table-hover">
@@ -34,7 +36,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-           <tr class="table table-secondary">
+            <tr class="table table-secondary">
                 <td>
                     @Html.DisplayFor(modelItem => item.FullName)
                 </td>
@@ -69,19 +71,50 @@
                 <td>
                     @foreach (var pet in item.Pets)
                     {
-                        <button class="btn btn-info btn-lg"> @Html.ActionLink("Edit", "Edit", "Pet", new {id = pet.PetId }, null)</button>
+                        <button class="btn btn-info btn-lg"> @Html.ActionLink("Edit", "Edit", "Pet", new { id = pet.PetId }, null)</button>
                         <button class="btn btn-info btn-lg"> @Html.ActionLink("Delete", "Delete", "Pet", new { id = pet.PetId }, null)</button>
                         <br /><br />
                     }
                 </td>
             </tr>
-          }
+        }
     </tbody>
 </table>
-
+<br />
+<br />
 <div class="clients">
     <p>We <span class="glyphicon"> &hearts;</span> our Cute Clients ...</p>
 </div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-3" style="width: 280px;">
+            <h3 class="card-header">Tiger</h3>
+            <img style="height: 200px; width: 100%; display: block;" src="~/Content/assets/Clients/kitten-peaking-through-greenery_4460x4460.jpg" alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card mb-3" style="width: 280px;">
+            <h3 class="card-header">Milo</h3>
+            <img style="height: 200px; width: 100%; display: block;" src="~/Content/assets/Clients/dog-1191676_1920.jpg" alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card mb-3" style="width: 280px;">
+            <h3 class="card-header">Naomi</h3>
+            <img style="height: 200px; width: 100%; display: block;" src="~/Content/assets/Clients/kate-stone-matheson-1141289-unsplash.jpg" alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 

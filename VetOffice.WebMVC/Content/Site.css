@@ -1,4 +1,6 @@
-﻿* {
+﻿/*---------------------SHARED LAYOUT------------------------------*/
+
+* {
     margin: 0;
     max-width: 100%;
 }
@@ -18,43 +20,56 @@ body {
     background-size: cover;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.clients {
+    font-family: 'Emilys Candy';
+    font-size: 4em;
+    color: #02325f;
+}
+
+.glyphicon {
+    color: #C71C22;
+}
+
+.catEkg {
+    width: 100%;
+}
+
+.icon-bar {
+    width: 100%;
+    background-image: linear-gradient(#04519b, #033C73 60%, #02325f);
+}
+
+.icon-bar a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 35px;
+}
+
+.icon-bar a:hover {
+    background-color: #C71C22;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
+select,
 textarea {
     max-width: 280px;
 }
 
-select {
-    display: block;
-    width: 100%;
-    height: calc(2.25rem + 2px);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+.ekg {
+    height: 200px;
+    display: flex;
+    justify-content: center;
 }
 
-.backgroundImageForForms {
-    background-image: url('assets/Backgrounds/small-dog_small.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 650px;
-    width: 100%;
-    padding-left: 6%;
-    padding-top: 4%;
-    border-radius: 1%;
+.footy {
+    font-size: 2em;
 }
+
+/*---------------------HOME PAGE------------------------------*/
 
 .jumbotron {
     height: 450px;
@@ -99,44 +114,7 @@ select {
     font-size: 2em;
 }
 
-.clients {
-    font-family: 'Emilys Candy';
-    font-size: 4em;
-    color: #02325f;
-}
-
-.glyphicon {
-    color: #C71C22;
-}
-
-.catEkg {
-    
-    width: 100%;
-}
-
-.icon-bar {
-    width: 100%;
-    background-image: linear-gradient(#04519b, #033C73 60%, #02325f);
-}
-
-.icon-bar a {
-    float: left;
-    width: 20%;
-    text-align: center;
-    transition: all 0.3s ease;
-    color: white;
-    font-size: 35px;
-}
-
-.icon-bar a:hover {
-    background-color: #C71C22;
-}
-
-#animalPic {
-    height: 250px;
-    border-color: #555;
-    border: 10px;
-}
+/*---------------------TABLES------------------------------*/
 
 .tableHeader {
     font-family: Domine, serif;
@@ -146,6 +124,85 @@ select {
 
 .table {
     font-size: 1.3em;
+}
+
+.container {
+    padding: 0;
+}
+
+thead {
+    font-size: 1.3em;
+}
+
+/*---------------------CARDS------------------------------*/
+
+.card.mb-3 {
+    margin: 0 !important;
+    display: inline-block;
+}
+
+.card-header {
+    font-family: Questrial, sans-serif;
+    font-size: 2em;
+}
+
+.card-text {
+    font-size: 1.3em;
+}
+
+/*---------------------FORMS------------------------------*/
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+select {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.backgroundImageForEditForms {
+    background-image: url('assets/Backgrounds/small-dog_small.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 650px;
+    width: 100%;
+    padding-left: 6%;
+    padding-top: 4%;
+    border-radius: 1%;
+}
+
+.backgroundImageForDeleteForms {
+    background-image: url('assets/Backgrounds/adorable-dog_925x.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 750px;
+    width: 100%;
+    padding-left: 6%;
+    padding-top: 4%;
+    border-radius: 1%;
+}
+
+.form-horizontal {
+    color: #f8f9fa;
+    font-size: 1.7em;
+    padding-top: 10%;
+}
+
+#lessPadding {
+    padding-top: 1%;
 }
 
 .form-group {
@@ -177,6 +234,10 @@ select {
     font-size: 1em;
 }
 
+
+
+
+
 .centered {
     margin: auto;
     max-width: 800px;
@@ -187,48 +248,11 @@ select {
     max-width: 1200px;
 }
 
-.card.mb-3 {
-    margin: 0 !important;
-    display: inline-block;
-}
-
-.card-header {
-    font-family: Questrial, sans-serif;
-    font-size: 2em;
-}
-
-.cards {
-    display: inline-block;
-}
-
-.card-title {
-    color: #033C73;
-}
-
-.card-text {
-    font-size: 1.3em;
-}
-
 .inner {
     margin: 0 !important;
     width: 270px;
 }
 
-.ekg {
-    height: 200px;
-    display: flex;
-    justify-content: center;
-}
-
-.footy {
-    font-size: 2em;
-}
-
 .pet {
     width: 125px;
-}
-
-.subtitle {
-    font-size: 2em;
-    color: white;
 }

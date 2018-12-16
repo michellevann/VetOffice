@@ -9,6 +9,8 @@
     <br />
     <a class="btn btn-info btn-lg" href="@Url.Action("Create","Appointment")">Schedule Appointment</a>
     <br />
+    <br />
+    <br />
 </div>
 
 <table class="table table-hover">
@@ -35,31 +37,62 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr class="table table-secondary">
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pet.PetName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NextAppt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApptTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReasonForVisit)
-            </td>
-            <td>
-                <button class="btn btn-info btn-lg"> @Html.ActionLink("Edit", "Edit", "Appointment", new { id = item.AppointmentId }, null) </button>
-                <button class="btn btn-info btn-lg"> @Html.ActionLink("Delete", "Delete", "Appointment", new { id = item.AppointmentId }, null)</button>
-            </td>
-        </tr>
+            <tr class="table table-secondary">
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pet.PetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NextAppt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApptTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReasonForVisit)
+                </td>
+                <td>
+                    <button class="btn btn-info btn-lg"> @Html.ActionLink("Edit", "Edit", "Appointment", new { id = item.AppointmentId }, null) </button>
+                    <button class="btn btn-info btn-lg"> @Html.ActionLink("Delete", "Delete", "Appointment", new { id = item.AppointmentId }, null)</button>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
-
+<br />
+<br />
 <div class="clients">
     <p>We <span class="glyphicon"> &hearts;</span> our Cute Clients ...</p>
 </div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-3" style="width: 280px;">
+            <h3 class="card-header">Midnight</h3>
+            <img style="height: 200px; width: 100%; display: block;" src="~/Content/assets/Clients/BlackShyPuppy.jpg" alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card mb-3" style="width: 280px;">
+            <h3 class="card-header">Leo</h3>
+            <img style="height: 200px; width: 100%; display: block;" src="~/Content/assets/Clients/berkay-gumustekin-402114-unsplash.jpg" alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card mb-3" style="width: 280px;">
+            <h3 class="card-header">Lewis</h3>
+            <img style="height: 200px; width: 100%; display: block;" src="~/Content/assets/Clients/kitten-1169507_1920.jpg" alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+</div>
+

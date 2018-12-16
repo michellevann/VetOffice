@@ -17,7 +17,7 @@
         <a href="@Url.Action("Index","Customer")"><i class="fa fa-user"></i></a>
         <a href="@Url.Action("Index","Pet")"><i class="fa fa-paw"></i></a>
         <a href="@Url.Action("Index","Appointment")"><i class="fa fa-calendar-alt"></i></a>
-        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
         {
             @Html.AntiForgeryToken()
             @Url.Action("Index","Manage")

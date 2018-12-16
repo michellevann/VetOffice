@@ -210,6 +210,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\Backgrounds\adorable-dog_925x.jpg" />
     <Content Include="Content\assets\Backgrounds\business-pug-working-on-laptop_4460x4460.jpg" />
     <Content Include="Content\assets\Backgrounds\business-pug.jpg" />
     <Content Include="Content\assets\Backgrounds\pugHeader.jpg" />
@@ -222,14 +223,16 @@
     <Content Include="Content\assets\Clients\blueEyesCat.jpg" />
     <Content Include="Content\assets\Clients\blueEyesCat_small.jpg" />
     <Content Include="Content\assets\Clients\dog-1191676_1920.jpg" />
+    <Content Include="Content\assets\Clients\jamie-street-562280-unsplash.jpg" />
     <Content Include="Content\assets\Clients\kate-stone-matheson-1141289-unsplash.jpg" />
     <Content Include="Content\assets\Clients\kitten-1169507_1920.jpg" />
     <Content Include="Content\assets\Clients\kitten-peaking-through-greenery_4460x4460.jpg" />
     <Content Include="Content\assets\Clients\poodle-796462_1920.jpg" />
     <Content Include="Content\assets\Clients\poodle_small.jpg" />
+    <Content Include="Content\assets\Clients\raul-varzar-750436-unsplash.jpg" />
     <Content Include="Content\assets\Clients\sleepyPuppy_small.jpg" />
     <Content Include="Content\assets\Clients\StockSnap_7DWDQY7PEW.jpg" />
-    <Content Include="Content\assets\Clients\uriel-soberanes-353029-unsplash.jpg" />
+    <Content Include="Content\assets\Clients\zhenhao-liu-778651-unsplash.jpg" />
     <Content Include="Content\assets\Other\abstract-1751204_1280.png" />
     <Content Include="Content\assets\Other\catEkg.png" />
     <Content Include="Content\assets\Other\catEkg_half.png" />
