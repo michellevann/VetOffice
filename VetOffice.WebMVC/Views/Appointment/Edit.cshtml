@@ -3,51 +3,58 @@
 @{
     ViewBag.Title = "Edit";
 }
+<div class="backgroundImageForForms">
+    <div class="formContainer" style="height:400px;">
+        <div class="container" style="padding-left:0; height:20%;">
+            <p class="tableHeader" style="display: flex; justify-content:flex-start;">Edit Appointment</p>
+            <br />
+            <br />
+        </div>
 
-<div class="container">
-    <h1 class="tableHeader">Edit Appointment</h1>
-    <br />
-    <br />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.AppointmentId)
+
+                <div class="form-group">
+                    <p>Appointment Date</p>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.NextAppt, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NextAppt, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>Appointment Time</p>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.ApptTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ApptTime, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>Reason For Visit</p>
+                    <div class="col-md-10" style="color:#808080">
+                        @Html.EnumDropDownListFor(model => model.ReasonForVisit, "Please select reason for visit.", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ReasonForVisit, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group-lg" style="padding-top: 3%;">
+                    <div class="col-md-offset-2 col-md-6" style="padding-top: 2%; padding-left: 15%; margin: 0;">
+                        <input type="submit" style="padding-left:10%; padding-right:10%;" value="Save" class="btn btn-info btn-lg">
+                    </div>
+                    <div class="col-md-offset-2 col-md-6" style="padding-top: 2%; padding-left: 0%; margin: 0;">
+                        <a class="btn btn-info btn-lg" style="padding-left:10%; padding-right:10%;" href="/Appointment">Back To List</a>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
 </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-<div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.AppointmentId)
-
-    <div class="form-group">
-        <p>Appointment Date</p>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.NextAppt, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.NextAppt, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <p>Appointment Time</p>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ApptTime, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ApptTime, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <p>Reason For Visit</p>
-        <div class="col-md-10" style="color:#808080">
-            @Html.EnumDropDownListFor(model => model.ReasonForVisit, "Please select reason for visit.", new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ReasonForVisit, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group-lg">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-info btn-lg" />
-            <a class="btn btn-info btn-lg" href="@Url.Action("Index","Appointment")">Back To List</a>
-        </div>
-    </div>
-</div>
-}
+       
