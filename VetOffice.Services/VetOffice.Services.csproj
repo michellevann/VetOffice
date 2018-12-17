@@ -64,6 +64,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VetOffice.Contracts\VetOffice.Contracts.csproj">
+      <Project>{A3116BF4-C79F-4B4C-BA0C-C17593C2BB52}</Project>
+      <Name>VetOffice.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VetOffice.Data\VetOffice.Data.csproj">
       <Project>{1479d3be-4a1d-4bf5-8e6a-a554e8b97c05}</Project>
       <Name>VetOffice.Data</Name>

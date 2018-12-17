@@ -54,11 +54,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAppointmentService.cs" />
+    <Compile Include="ICustomerService.cs" />
+    <Compile Include="IPetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VetOffice.Models\VetOffice.Models.csproj">
+      <Project>{978AF09F-AB98-4CC7-8FAD-7F6FF6BCC20C}</Project>
+      <Name>VetOffice.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

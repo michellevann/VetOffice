@@ -189,6 +189,17 @@ thead {
     border-radius: 1%;
 }
 
+.customerEditImage {
+    background-image: url('assets/Backgrounds/small-dog_small.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 750px;
+    width: 100%;
+    padding-left: 6%;
+    padding-top: 1%;
+    border-radius: 1%;
+}
+
 .backgroundImageForDeleteForms {
     background-image: url('assets/Backgrounds/adorable-dog_925x.jpg');
     background-size: cover;
@@ -208,6 +219,12 @@ thead {
 
 #edit {
     font-size: 1.3em;
+    padding-top: 0;
+    padding-left: 5%;
+}
+
+#editTwo {
+    font-size: .8em;
     padding-top: 0;
     padding-left: 5%;
 }

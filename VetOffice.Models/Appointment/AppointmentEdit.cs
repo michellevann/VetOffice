@@ -26,6 +26,7 @@ namespace VetOffice.Models
 
         public VisitReason ReasonForVisit { get; set; }
 
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
         public virtual Pet Pet { get; set; }

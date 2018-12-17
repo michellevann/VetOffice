@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VetOffice.Contracts;
 using VetOffice.Data;
 using VetOffice.Models;
 
 namespace VetOffice.Services
 {
-    public class AppointmentService
+    public class AppointmentService : IAppointmentService
     {
         private readonly Guid _userId;
         public AppointmentService(Guid userId)

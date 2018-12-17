@@ -16,6 +16,7 @@ namespace VetOffice.Data
         [Required]
         public Guid OwnerId { get; set; }
         [Required]
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
         [Required]
         public string StreetAddress { get; set; }

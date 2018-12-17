@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VetOffice.Contracts;
 using VetOffice.Data;
 using VetOffice.Models;
 
 namespace VetOffice.Services
 {
-    public class CustomerService
+    public class CustomerService : ICustomerService
     {
         private readonly Guid _userId;
         public CustomerService(Guid userId)
@@ -20,6 +21,7 @@ namespace VetOffice.Services
         {
             var entity = new Customer()
             {
+                OwnerId = _userId,
                 CustomerId = model.CustomerId,
                 FullName = model.FullName,
                 StreetAddress = model.StreetAddress,

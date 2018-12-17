@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VetOffice.Contracts;
 using VetOffice.Data;
 using VetOffice.Models;
 
 namespace VetOffice.Services
 {
-    public class PetService
+    public class PetService : IPetService
     {
         private readonly Guid _userId;
         public PetService(Guid userId)
