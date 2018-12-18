@@ -16,7 +16,7 @@ namespace VetOffice.Data.Migrations
                         CustomerId = c.Int(nullable: false),
                         PetId = c.Int(nullable: false),
                         NextAppt = c.DateTime(nullable: false),
-                        ApptTime = c.String(),
+                        ApptTime = c.DateTime(nullable: false),
                         ReasonForVisit = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.AppointmentId)
@@ -45,12 +45,15 @@ namespace VetOffice.Data.Migrations
                     {
                         CustomerId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
-                        FirstName = c.String(nullable: false),
-                        LastName = c.String(nullable: false),
-                        StreetAddress = c.String(),
-                        City = c.String(),
-                        State = c.String(),
-                        ZipCode = c.String(),
+                        FullName = c.String(nullable: false),
+                        StreetAddress = c.String(nullable: false),
+                        Apt = c.String(),
+                        City = c.String(nullable: false),
+                        State = c.String(nullable: false),
+                        ZipCode = c.String(nullable: false),
+                        Phone = c.String(nullable: false),
+                        CanText = c.Boolean(nullable: false),
+                        Email = c.String(),
                     })
                 .PrimaryKey(t => t.CustomerId);
             

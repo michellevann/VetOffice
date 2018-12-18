@@ -262,6 +262,14 @@ thead {
     font-size: .8em;
 }
 
+#TypeOfPet {
+    color:#495057;
+}
+
+#AgeOfPet {
+    color: #495057;
+}
+
 .backgroundImageForLogin {
     background-image:url(assets/Backgrounds/blueDogHouse.jpg);
     background-size: cover;
@@ -303,6 +311,3 @@ thead {
     width: 270px;
 }
 
-.pet {
-    width: 125px;
-}

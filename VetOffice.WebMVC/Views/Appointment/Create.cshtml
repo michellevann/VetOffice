@@ -4,68 +4,64 @@
     ViewBag.Title = "Create";
 }
 
-<div class="container">
-    <h1 class="tableHeader">New Appointment</h1>
-    <br />
-    <br />
-</div>
+<div class="backgroundImageForDeleteForms">
+    <div class="formContainer" style="height:575px;">
+        <div class="container" style="padding-left:0; height:15%;">
+            <p class="tableHeader" style="display: flex; justify-content:flex-start;">New Pet</p>
+        </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-horizontal" style="padding:0;">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        <p class="customer">Customer's Name</p>
-        <div class="col-md-10">
-            @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <br />
-    <div class="form-group">
-        <p class="pet">Pet's Name</p>
-        <div class="col-md-10">
-            @Html.DropDownList("PetId", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <br/>
-    <div class="form-group">
-        <p>Appointment Date</p>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.NextAppt, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.NextAppt, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <br />
-    <div class="form-group">
-        <p>Appointment Time</p>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ApptTime, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ApptTime, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <br />
-    <div class="form-group">
-        <p>Reason For Visit</p>
-        <div class="col-md-10" style="color:#808080">
-            @Html.EnumDropDownListFor(model => model.ReasonForVisit, "Please select reason for visit.", new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+                <div class="form-group" style="font-size:1.2em;">
+                    <p class="customer">Customer's Name</p>
+                    <div class="col-md-10">
+                        @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group" style="font-size:1.2em;">
+                    <p class="pet">Pet's Name</p>
+                    <div class="col-md-10">
+                        @Html.DropDownList("PetId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group" style="font-size:1.2em;">
+                    <p>Appointment Date</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NextAppt, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NextAppt, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group" style="font-size:1.2em;">
+                    <p>Appointment Time</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ApptTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ApptTime, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group" style="font-size:1.2em;">
+                    <p>Reason For Visit</p>
+                    <div class="col-md-10" style="color:#808080">
+                        @Html.EnumDropDownListFor(model => model.ReasonForVisit, "Please select reason for visit.", new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
 
-    <br />
-    <div class="form-control-lg">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Add" class="btn btn-info btn-lg" />
-            <a class="btn btn-info btn-lg" href="@Url.Action("Index","Appointment")">Back To List</a>
-        </div>
+                <br />
+                <div class="form-control-lg">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Add" class="btn btn-info btn-lg" />
+                        <a class="btn btn-info btn-lg" href="@Url.Action("Index","Appointment")">Back To List</a>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </div>
-}
-
 
 

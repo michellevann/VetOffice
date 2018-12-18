@@ -4,63 +4,64 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h4>PetCreate</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Customer, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+<div class="backgroundImageForDeleteForms">
+    <div class="formContainer" style="height:550px;">
+        <div class="container" style="padding-left:0; height:15%;">
+            <p class="tableHeader" style="display: flex; justify-content:flex-start;">New Pet</p>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.PetName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.PetName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PetName, "", new { @class = "text-danger" })
-        </div>
-    </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TypeOfPet, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EnumDropDownListFor(model => model.TypeOfPet, "Please select type of pet.", new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+            <div class="form-horizontal" style="padding:0;">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Breed, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Breed, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Breed, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                <div class="form-group" style="font-size:1.2em;">
+                    <p>Customer's Name</p>
+                    <div class="col-md-10">
+                        @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.AgeOfPet, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EnumDropDownListFor(model => model.AgeOfPet, "Please select age of pet.", new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+                <div class="form-group" style="font-size:1.2em;">
+                    <p>Pet's Name</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PetName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PetName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
-    </div>
-</div>
-}
+                <div class="form-group" style="font-size:1.2em;">
+                    <p>Type of Pet</p>
+                    <div class="col-md-10">
+                       @Html.EnumDropDownListFor(model => model.TypeOfPet, "Please select type of pet.", new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+                <div class="form-group" style="font-size:1.2em;">
+                    <p>Breed</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Breed, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Breed, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size:1.2em;">
+                    <p>Age of Pet</p>
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(model => model.AgeOfPet, "Please select age of pet.", new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-control-lg">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Add" class="btn btn-info btn-lg" />
+                        <a class="btn btn-info btn-lg" href="@Url.Action("Index","Pet")">Back To List</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
