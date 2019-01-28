@@ -68,11 +68,13 @@ namespace VetOffice.WebMVC.Controllers
             return View(model);
         }
 
-        [HttpPost]
+        [HttpPut]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, AppointmentEdit model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+                return View(model);
+
             if (model.AppointmentId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
@@ -85,7 +87,7 @@ namespace VetOffice.WebMVC.Controllers
                 return RedirectToAction("Index");
             }
             ModelState.AddModelError("", "Your appointment could not be updated.");
-            return View(model);
+                return View(model);
         }
 
         [ActionName("Delete")]

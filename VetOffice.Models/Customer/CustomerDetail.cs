@@ -11,19 +11,28 @@ namespace VetOffice.Models
     public class CustomerDetail
     {
         public int CustomerId { get; set; }
+
         [Display(Name = "Full Name")]
         public string FullName { get; set; }
+
         [Display(Name = "Street Address")]
         public string StreetAddress { get; set; }
+
         [Display(Name = "Apt #")]
         public string Apt { get; set; }
+
         public string City { get; set; }
+
         public string State { get; set; }
+
         [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
+
         [Phone]
         public string Phone { get; set; }
+
         public bool CanText { get; set; }
+
         [EmailAddress]
         public string Email { get; set; }
 

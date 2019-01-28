@@ -29,6 +29,7 @@ namespace VetOffice.Models
 
         [Display(Name = "Full Name")]
         public string FullName { get; set; }
+
         [Display(Name = "Pet Name")]
         public string PetName { get; set; }
 

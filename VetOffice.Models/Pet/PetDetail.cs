@@ -15,9 +15,12 @@ namespace VetOffice.Models
 
         [Display(Name = "Pet Name")]
         public string PetName { get; set; }
+
         [Display(Name = "Type of Pet")]
         public PetType TypeOfPet { get; set; }
+
         public string Breed { get; set; }
+
         [Display(Name = "Age of Pet")]
         public PetAge AgeOfPet { get; set; }
 
@@ -25,6 +28,5 @@ namespace VetOffice.Models
         public virtual Customer Customer { get; set; }
 
         public override string ToString() => $"[{PetId}] {PetName}";
-
     }
 }

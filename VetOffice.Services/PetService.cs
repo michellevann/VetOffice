@@ -22,7 +22,6 @@ namespace VetOffice.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var customer = ctx
-
                     .Customers
                     .Single(x => x.CustomerId == model.CustomerId);
 
@@ -99,8 +98,8 @@ namespace VetOffice.Services
                 {
                     PetId = entity.PetId,
                     CustomerId = entity.CustomerId,
-                    Customer = entity.Customer,
                     PetName = entity.PetName,
+                    Customer = entity.Customer,
                     TypeOfPet = entity.TypeOfPet,
                     Breed = entity.Breed,
                     AgeOfPet = entity.AgeOfPet
@@ -115,6 +114,7 @@ namespace VetOffice.Services
                 var entity = ctx
                     .Pets
                     .Single(e => e.PetId == model.PetId);
+
                 entity.PetName = model.PetName;
                 entity.TypeOfPet = model.TypeOfPet;
                 entity.Breed = model.Breed;
@@ -127,9 +127,7 @@ namespace VetOffice.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx
-                    .Pets
-                    .Single(e => e.PetId == petId);
+                var entity = ctx.Pets.Single(e => e.PetId == petId);
                 ctx.Pets.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

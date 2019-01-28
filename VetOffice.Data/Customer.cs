@@ -33,6 +33,5 @@ namespace VetOffice.Data
         public string Email { get; set; }
 
         public ICollection<Pet> Pets { get; set; }
-
     }
 }
