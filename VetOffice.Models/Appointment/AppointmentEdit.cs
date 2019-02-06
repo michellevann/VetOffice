@@ -21,7 +21,7 @@ namespace VetOffice.Models
         public DateTime NextAppt { get; set; }
 
         [DataType(DataType.Time)]
-        [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:hh:mm}", ApplyFormatInEditMode = true)]
         public DateTime ApptTime { get; set; }
 
         public VisitReason ReasonForVisit { get; set; }
